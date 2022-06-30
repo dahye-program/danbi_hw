@@ -12,6 +12,17 @@ body{
   background-color: pink;
 }
 
+#pointer{
+  /* visibility: hidden; */
+  position: absolute;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  z-index: 0;
+  transition: all 0.5s ease-out;
+}
+
 .menubar{
   list-style: none;
   width: 80px;
@@ -20,6 +31,8 @@ body{
   margin: 0 auto;
   padding: 10px 10px;
   background-color: var(--color-white);
+  z-index: 1;
+
 }
 
 button{
@@ -29,4 +42,5 @@ button{
   background-color: var(--color-white);
   cursor: pointer;
   border-radius: 50px;
+  z-index: 999;
 }
