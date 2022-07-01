@@ -8,13 +8,22 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-  <ul class="menubar">
-    <span id="pointer"></span>
-    <button class="home_icon"><img src="imgs/home_icon.svg" alt="홈 아이콘" width="40px" height="40px"/></li>
-    <button class="profile_icon"><img src="imgs/profile_icon.svg" alt="프로필 아이콘" width="40px" height="40px"/></li>
-    <button class="message_icon"><img src="imgs/message_icon.svg" alt="메시지 아이콘" width="40px" height="40px"/></li>
-    <button class="help_icon"><img src="imgs/help_icon.svg" alt="도움말 아이콘" width="40px" height="40px"/></li>
-    <button class="settings_icon"><img src="imgs/settings_icon.svg" alt="설정 아이콘" width="40px" height="40px"/></li>
-  </ul>
+  <div class="container">
+    <div class="menubar">
+      <span id="pointer"></span>
+      <button class="home_icon"><img id="home_img" src="imgs/home_icon.svg" alt="홈 아이콘" width="40px" height="40px"/></li>
+      <button class="profile_icon"><img id="profile_img" src="imgs/profile_icon.svg" alt="프로필 아이콘" width="40px" height="40px"/></li>
+      <button class="message_icon"><img id="message_img" src="imgs/message_icon.svg" alt="메시지 아이콘" width="40px" height="40px"/></li>
+      <button class="help_icon"><img src="imgs/help_icon.svg" alt="도움말 아이콘" width="40px" height="40px"/></li>
+      <button class="settings_icon"><img src="imgs/settings_icon.svg" alt="설정 아이콘" width="40px" height="40px"/></li>
+    </div>
+    <ul class="list">
+      <li class="content" data-value="home">Home</li>
+      <li class="content" data-value="profile">Profile</li>
+      <li class="content" data-value="message">Message</li>
+      <li class="content" data-value="help">Help</li>
+      <li class="content" data-value="settings">Settings</li>
+    </ul>
+  </div>
 </body>
 </html>

@@ -12,8 +12,11 @@ body{
   background-color: pink;
 }
 
+.container{
+  display: flex;
+}
+
 #pointer{
-  /* visibility: hidden; */
   position: absolute;
   display: inline-block;
   width: 80px;
@@ -24,15 +27,14 @@ body{
 }
 
 .menubar{
+  display: block;
   list-style: none;
   width: 80px;
   height: 100%;
   border-radius: 50px;
-  margin: 0 auto;
   padding: 10px 10px;
   background-color: var(--color-white);
   z-index: 1;
-
 }
 
 button{
@@ -42,5 +44,30 @@ button{
   background-color: var(--color-white);
   cursor: pointer;
   border-radius: 50px;
+}
+
+img{
   z-index: 999;
+}
+
+.list{
+  display: block;
+  list-style: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.content{
+  visibility: hidden;
+  max-width: calc(100% - 20px);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  line-height: 1;
+  color: #000000;
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+.content.selected{
+  visibility: visible;
 }
