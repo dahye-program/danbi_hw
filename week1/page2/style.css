@@ -51,7 +51,7 @@ b{
 }
 
 .html + svg .outer {
-  stroke: #e34f26;
+  stroke: #83cd29;
 }
 
 .css {
@@ -60,7 +60,7 @@ b{
 }
 
 .css + svg .outer {
-  stroke: #0d84ce;
+  stroke: #ffff00;
 }
 
 .javascript {
@@ -71,7 +71,7 @@ b{
 }
 
 .javascript + svg .outer {
-  stroke: #f0e040;
+  stroke: #cc33ff;
 }
 
 .photoshop {
@@ -82,7 +82,7 @@ b{
 }
 
 .photoshop + svg .outer {
-  stroke: #83cd29;
+  stroke: #0d84ce;
 }
 
 .chart svg {
