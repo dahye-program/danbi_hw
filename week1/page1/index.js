@@ -66,7 +66,7 @@ settingsIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#ff9900';
   pointer.style.backgroundColor = '#ff9900';
   pointer.style.top = settingsIconPosition + "px";  
-  
+
   contentName.forEach((el, i)=>{
     contentName[i].classList.remove('selected');
   })
