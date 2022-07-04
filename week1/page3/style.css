@@ -1,0 +1,22 @@
+#clock{
+  width: 210px;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: gray;
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 15px;
+  border: 2px solid black;
+}
+
+#hour{
+  color: red;
+}
+
+#minute{
+  color: yellow;
+}
+
+#second{
+  color: green;
+}
