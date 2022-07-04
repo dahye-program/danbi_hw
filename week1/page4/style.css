@@ -1,0 +1,66 @@
+body{
+  margin: 0;
+}
+
+.navigation{
+  width: 20vw;
+  color:white;
+  float: left;
+}
+
+.title{
+  padding: 15px;
+}
+
+.navlist {
+  height: 100vh;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0px;
+  background-color: dodgerblue;
+}
+
+li {
+  display: inline-block;
+  width: 100%;
+  padding: 20px 0;
+}
+
+li:not(.title):hover{
+  background-color: white;
+  color: dodgerblue;
+}
+
+img{
+  padding-right: 20px;
+}
+
+.main{
+  display: inline-block;
+}
+
+.topbar{
+  width: 77vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+input{
+  width: 350px;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid darkgray;
+  padding: 5px;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png");
+  background-size: contain;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+}
+
+input:focus{
+  background-image: none;
+  background-position: -10px center;
+  text-indent: 0;
+}
