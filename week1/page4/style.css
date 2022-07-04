@@ -2,8 +2,9 @@ body{
   margin: 0;
 }
 
+/* navigation */
 .navigation{
-  width: 20vw;
+  width: 300px;
   color:white;
   float: left;
 }
@@ -35,12 +36,14 @@ img{
   padding-right: 20px;
 }
 
+/* main section */
 .main{
   display: inline-block;
 }
 
+/* header */
 .topbar{
-  width: 77vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -63,4 +66,36 @@ input:focus{
   background-image: none;
   background-position: -10px center;
   text-indent: 0;
+}
+
+/* cardbox */
+.cardbox{
+  display: flex;
+}
+
+.card{
+  width: 330px;
+  height: 150px;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card:hover{
+  background-color: dodgerblue;
+}
+
+.card:hover .card_value, .card:hover .card_title{
+  color: white;
+}
+
+.card_value{
+  color: dodgerblue;
+  font-size: 40px;
+}
+
+.card_title{
+  color: darkgray;
 }
