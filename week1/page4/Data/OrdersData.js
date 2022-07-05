@@ -1,4 +1,4 @@
-const OrdersData = [
+export const OrdersData = [
   {
     Name: 'Star Refrigerator',
     Price: '$1200',

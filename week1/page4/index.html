@@ -6,21 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>page4</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="index.js" defer></script>
+  
 </head>
 <body>
   <div class="container">
-    <div class="navigation">
+    <section class="navigation">
       <ul class="navlist">
         <li class="title"><img src="imgs/logo.png" width="25px" height="25px">Brand Name</li>
-        <li><img class="navIcon" src=""/>Dashboard</li>
-        <li><img class="navIcon" src=""/>Customers</li>
-        <li><img class="navIcon" src=""/>Message</li>
-        <li><img class="navIcon" src=""/>Help</li>
-        <li><img class="navIcon" src=""/>Settings</li>
-        <li><img class="navIcon" src=""/>Password</li>
-        <li><img class="navIcon" src=""/>Sign Out</li>
+        <li class="navicon"><img class="navIcon" src=""/>Dashboard</li>
+        <li class="navicon"><img class="navIcon" src=""/>Customers</li>
+        <li class="navicon"><img class="navIcon" src=""/>Message</li>
+        <li class="navicon"><img class="navIcon" src=""/>Help</li>
+        <li class="navicon"><img class="navIcon" src=""/>Settings</li>
+        <li class="navicon"><img class="navIcon" src=""/>Password</li>
+        <li class="navicon"><img class="navIcon" src=""/>Sign Out</li>
       </ul>
-    </div>
+    </section>
     <section class="main">
       <div class="topbar">
         <div class="menubar"><img src="imgs/hamburger.png" width="40px" height="40px"/></div>
@@ -57,7 +59,42 @@
           <img class="card_icon" src=""/>
         </div>
       </section>
-      </section>
+      <div class="details">
+        <div class="orders">
+          <div class="orders_container">
+            <h2 class="orders_title">Recent Orders</h2>
+            <button>View All</button>
+          </div>
+          <div class="orders_table_title">
+            <h4 class="title1">Name</h4>
+            <h4 class="title2">Price</h4>
+            <h4 class="title3">Payment</h4>
+            <h4 class="title4">Status</h4>
+          </div>
+          <div class="orders_wrap">
+          <ul class="orders_table_content">
+            <li class="orders_name">Star Refrigerator</li>
+            <li class="orders_price">$1200</li>
+            <li class="orders_pament">Paid</li>
+            <li class="orders_status">Delivered</li>
+          </ul>
+        </div>
+        </div>
+        <div class="customers">
+          <h2 class="customers_title">Recent Customers</h2>
+          <div class="customers_profile">
+            <div class="customers_wrap">
+              <img src="imgs/profile.png" width="30px" height="30px"/>
+              <div class="customers_info">
+                <div class="customers_name"></div>
+                <div class="customers_country"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ㅇ>
+    </section>
   </div>
 </body>
 </html>
