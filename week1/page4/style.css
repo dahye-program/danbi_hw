@@ -4,13 +4,14 @@ body{
 
 /* navigation */
 .navigation{
-  width: 300px;
+  width: 20%;
   color:white;
   float: left;
 }
 
 .title{
   padding: 15px;
+  padding-bottom: 50px;
 }
 
 .navlist {
@@ -21,15 +22,16 @@ body{
   background-color: dodgerblue;
 }
 
-li {
+.navicon {
   display: inline-block;
   width: 100%;
   padding: 20px 0;
 }
 
-li:not(.title):hover{
+.navicon:hover{
   background-color: white;
   color: dodgerblue;
+  border-radius: 50px;
 }
 
 img{
@@ -38,19 +40,25 @@ img{
 
 /* main section */
 .main{
-  display: inline-block;
+  display: grid;
 }
 
 /* header */
 .topbar{
   width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+}
+
+.menubar{
+  cursor: pointer;
 }
 
 input{
-  width: 350px;
+  width: 30%;
   height: 30px;
   border-radius: 50px;
   border: 1px solid darkgray;
@@ -71,11 +79,13 @@ input:focus{
 /* cardbox */
 .cardbox{
   display: flex;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .card{
-  width: 330px;
-  height: 150px;
+  width: 22%;
+  height: 70%;
   margin: 20px;
   border-radius: 30px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -98,4 +108,109 @@ input:focus{
 
 .card_title{
   color: darkgray;
+}
+
+/* details */
+.details{
+  margin: 20px;
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  justify-content: space-between;
+  height: 110%;
+}
+
+/* orders */
+.orders{
+  width: 65%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+
+.orders_container{
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.orders_title{
+  color: dodgerblue;
+  padding: 5px;
+}
+
+button{
+  width: 15%;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 16px;
+  margin: 20px;
+}
+
+.orders_table_title{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.orders_table_content{
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  border-bottom: 0.5px solid darkgray;
+  list-style: none;
+}
+
+.orders_table_content > li{
+  padding: 0px;
+  padding-left: 50px;
+}
+
+.orders_table_content:hover{
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* customers */
+.customers{
+  width: 30%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+
+.customers_title{
+  display: inline-block;
+  color: dodgerblue;
+}
+
+.customers_profile{
+  width: 100%;
+
+}
+
+.customers_wrap{
+  display: flex;
+}
+
+.customers_info{
+}
+
+.customers_wrapper:hover{
+  background-color: dodgerblue;
+  color: white;
+}
+
+.customers_name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.customers_country{
+  color: darkgray;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
