@@ -179,7 +179,7 @@ button{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 0px 10px;
+  padding: 0px;
 }
 
 .customers_title{
@@ -193,13 +193,13 @@ button{
 }
 
 .customers_wrap{
-  display: flex;
 }
 
 .customers_info{
+  padding-left: 10px;
 }
 
-.customers_wrapper:hover{
+.customers_info:hover{
   background-color: dodgerblue;
   color: white;
 }

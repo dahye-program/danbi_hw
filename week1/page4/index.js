@@ -10,9 +10,9 @@ let orderslist = OrdersData.map((value)=>{
 orderstable.innerHTML = orderslist.join('');
 
 // Recent Customers data
-const customers = document.querySelector('.customers_info');
+const customers = document.querySelector('.customers_wrap');
 let list = CustomersData.map((value)=>{
-  return '<div class="customers_name">'+value.Name+'</div>'+'<div class="customers_country">'+value.Country+'</div>'
+  return '<div class="customers_info"><div class="customers_name">'+value.Name+'</div>'+'<div class="customers_country">'+value.Country+'</div></div>'
 })
 
 customers.innerHTML = list.join('');
