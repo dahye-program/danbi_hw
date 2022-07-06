@@ -94,7 +94,6 @@ input:focus{
   display: flex;
   grid-column: 1;
   grid-row: 2;  
-  flex-wrap: wrap;
 }
 
 .card{
@@ -247,6 +246,41 @@ button{
   padding-bottom: 20px;
 }
 
+@media (max-width: 1024px){
+  .navlist{
+    display: none;
+  }
+  .navlist > :not(img){
+    display: none;
+  }
+  .cardbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+  .card{
+    min-height: 150px;
+    flex-basis: 30%;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+  .details{
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  /* orders */
+  .orders{
+    width: 60vw;
+  }
+
+  /* customers */
+  .customers{
+    width: 30vw;
+  }
+}
+
 @media (max-width: 768px){
   .navlist{
     display: none;
@@ -276,6 +310,7 @@ button{
   /* orders */
   .orders{
     width: 90vw;
+    margin: 0 auto;
   }
 
   .orders_table_content{
@@ -289,5 +324,6 @@ button{
   /* customers */
   .customers{
     width: 90vw;
+    margin: 0 auto;
   }
 }
