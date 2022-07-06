@@ -34,6 +34,10 @@ body{
   border-radius: 50px;
 }
 
+.navicon > img{
+  padding-left: 10px;
+}
+
 img{
   padding-right: 20px;
 }
