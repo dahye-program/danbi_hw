@@ -20,6 +20,7 @@ body{
   margin: 0;
   padding-left: 0px;
   background-color: dodgerblue;
+  cursor: pointer;
 }
 
 .navicon {
@@ -78,6 +79,10 @@ input:focus{
   background-image: none;
   background-position: -10px center;
   text-indent: 0;
+}
+
+.profile{
+  cursor: pointer;
 }
 
 /* cardbox */
@@ -173,16 +178,24 @@ button{
   padding-left: 10px;
   border-bottom: 0.5px solid darkgray;
   list-style: none;
+  cursor: pointer;
 }
 
 .orders_table_content > li{
   padding: 0px;
-  padding-left: 50px;
+  padding: 0px 20px;
 }
 
 .orders_table_content:hover{
   background-color: dodgerblue;
   color: white;
+}
+
+.orders_status{
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
 }
 
 /* customers */
@@ -202,7 +215,6 @@ button{
 
 .customers_profile{
   width: 100%;
-
 }
 
 .customers_wrap{
@@ -210,6 +222,7 @@ button{
 
 .customers_info{
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .customers_info:hover{

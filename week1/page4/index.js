@@ -16,3 +16,17 @@ let list = CustomersData.map((value)=>{
 })
 
 customers.innerHTML = list.join('');
+
+const ordersStatus = document.querySelectorAll('.orders_status');
+
+ordersStatus.forEach((e, i)=>{
+  if(ordersStatus[i].textContent === 'Delivered'){
+    ordersStatus[i].style.backgroundColor = '#00ff00';
+  }else if(ordersStatus[i].textContent === 'Pending'){
+    ordersStatus[i].style.backgroundColor = '#ff6347';
+  }else if(ordersStatus[i].textContent === 'Return'){
+    ordersStatus[i].style.backgroundColor = '#ff0000';
+  }else if(ordersStatus[i].textContent === 'In Progress'){
+    ordersStatus[i].style.backgroundColor = '#448ccb';
+  }else{}
+})
