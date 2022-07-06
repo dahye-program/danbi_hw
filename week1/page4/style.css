@@ -101,6 +101,15 @@ input:focus{
   color: white;
 }
 
+.card_wrap{
+  display: flex;
+  padding: 10px;
+}
+
+.card_wrap > img{
+  padding: 30px;
+}
+
 .card_value{
   color: dodgerblue;
   font-size: 40px;
