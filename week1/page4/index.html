@@ -6,24 +6,30 @@
   <title>page4</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="index.js" defer></script>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="container">
     <section class="navigation">
       <ul class="navlist">
-        <li class="title"><img src="imgs/logo.png" width="25px" height="25px">Brand Name</li>
-        <li class="navicon"><img class="navIcon" src="imgs/dashboard.png" width="35px" height="30px"/>Dashboard</li>
-        <li class="navicon"><img class="navIcon" src="imgs/customers.jpeg" width="35px" height="30px"/>Customers</li>
-        <li class="navicon"><img class="navIcon" src="imgs/message.png"  width="35px" height="30px"/>Message</li>
-        <li class="navicon"><img class="navIcon" src="imgs/help.png" width="35px" height="30px"/>Help</li>
-        <li class="navicon"><img class="navIcon" src="imgs/settings.png" width="35px" height="30px"/>Settings</li>
-        <li class="navicon"><img class="navIcon" src="imgs/password.png" width="35px" height="30px"/>Password</li>
-        <li class="navicon"><img class="navIcon" src="imgs/signout.jpeg" width="35px" height="30px"/>Sign Out</li>
+        <li class="title"><img src="imgs/logo.png" width="25px" height="25px"><a class="titlecontent">Brand Name</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/dashboard.png" width="35px" height="30px"/><a class="navicontent">Dashboard</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/customers.jpeg" width="35px" height="30px"/><a class="navicontent">Customers</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/message.png"  width="35px" height="30px"/><a class="navicontent">Message</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/help.png" width="35px" height="30px"/><a class="navicontent">Help</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/settings.png" width="35px" height="30px"/><a class="navicontent">Settings</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/password.png" width="35px" height="30px"/><a class="navicontent">Password</a></li>
+        <li class="navicon"><img class="navIcon" src="imgs/signout.jpeg" width="35px" height="30px"/><a class="navicontent">Sign Out</a></li>
       </ul>
     </section>
     <section class="main">
       <div class="topbar">
-        <div class="menubar"><img src="imgs/hamburger.png" width="40px" height="40px"/></div>
+        <div class="menubar">
+          <input type="checkbox" id="hamburger"/>
+          <label for="hamburger"><span><img src="imgs/hamburger.png" width="40px" height="40px"/></span></label>
+          <!-- <img src="imgs/hamburger.png" width="40px" height="40px"/> -->
+        </div>
         <input placeholder="Search here"/>
         <div class="profile"><img src="imgs/profile.png" width="40px" height="40px"/></div>
       </div>        
@@ -77,23 +83,13 @@
             <h4 class="title3">Payment</h4>
             <h4 class="title4">Status</h4>
           </div>
-          <div class="orders_wrap">
-          <!-- <ul class="orders_table_content">
-            <li class="orders_name">Star Refrigerator</li>
-            <li class="orders_price">$1200</li>
-            <li class="orders_pament">Paid</li>
-            <li class="orders_status">Delivered</li>
-          </ul> -->
-          </div>
+          <div class="orders_wrap"></div>
         </div>
         <div class="customers">
           <h2 class="customers_title">Recent Customers</h2>
           <div class="customers_profile">
             <div class="customers_wrap">
               <img src="imgs/profile.png" width="30px" height="30px"/>
-              <div class="customers_info">
-                <div class="customers_name"></div>
-                <div class="customers_country"></div>
               </div>
             </div>
           </div>

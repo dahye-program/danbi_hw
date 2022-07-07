@@ -10,12 +10,23 @@ body{
 .navigation{
   width: 20%;
   color:white;
+  position: relative;
   float: left;
+  transition: all 0.5s;
+}
+
+.navigation.on{
+  width: 4%;
+  transition: all 0.5s;
 }
 
 .title{
   padding: 15px;
   padding-bottom: 50px;
+}
+
+.titlecontent.none{
+  display: none;
 }
 
 .navlist {
@@ -46,6 +57,11 @@ img{
   padding-right: 20px;
 }
 
+.navicontent.none{
+  display: none;
+  transition: all 0.5s;
+}
+
 /* main section */
 .main{
   display: grid;
@@ -64,6 +80,15 @@ img{
 
 .menubar{
   cursor: pointer;
+}
+
+.menubar input[type=checkbox]{
+  display: none;
+  cursor: pointer;
+}
+
+.menubar input[type=checkbox]:checked .main{
+  width: 100%;
 }
 
 input{
@@ -250,20 +275,20 @@ button{
   .navlist{
     display: none;
   }
-  .navlist > :not(img){
-    display: none;
-  }
+
   .cardbox{
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
   }
+
   .card{
     min-height: 150px;
     flex-basis: 30%;
     flex-shrink: 1;
     flex-grow: 1;
   }
+  
   .details{
     width: 100%;
     margin: 0 auto;

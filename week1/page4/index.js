@@ -30,3 +30,17 @@ ordersStatus.forEach((e, i)=>{
     ordersStatus[i].style.backgroundColor = '#448ccb';
   }else{}
 })
+
+const menubarActiveCheck = document.querySelector('#hamburger');
+const navigation = document.querySelector('.navigation');
+const navcontent = document.querySelector('.navicontent');
+const logocontent = document.querySelector('.titlecontent');
+const navname = document.querySelectorAll('.navicontent');
+
+menubarActiveCheck.addEventListener('click', ()=>{
+  navigation.className === 'navigation' ? navigation.classList.add('on') : navigation.classList.remove('on');
+  navigation.className === 'navigation on' ? logocontent.classList.add('none') : logocontent.classList.remove('none');
+  navname.forEach((e, i)=>{
+    navigation.className === 'navigation on' ? navname[i].classList.add('none') : navname[i].classList.remove('none');
+  })
+})
