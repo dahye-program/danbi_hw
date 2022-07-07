@@ -1,12 +1,34 @@
+body{
+  padding:0;
+  margin:0;
+  background: #555;
+}
+#clock_wrapper{
+  position:relative;
+  background:#444;
+  width:275px;
+  height:275px;
+  padding:0px;
+  margin:20px auto;
+  border-radius:150px;
+  box-shadow:5px 5px 5px #111;
+}
+#analog_clock{
+  margin-left:10px;
+}
+
+
 #clock{
+  position: relative;
+  left: -110px;
+  top: 180px;
   width: 210px;
   display: inline-flex;
   justify-content: space-between;
-  background-color: gray;
+  background-color: #444;
   font-size: 30px;
   border-radius: 50px;
   padding: 15px;
-  border: 2px solid black;
 }
 
 #hour{
