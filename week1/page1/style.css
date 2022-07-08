@@ -47,9 +47,10 @@ button{
   padding: 20px;
   border: 0;
   outline: 0;
-  background-color: var(--color-white);
+  background-color: transparent;
   cursor: pointer;
   border-radius: 50px;
+  
 }
 
 img{

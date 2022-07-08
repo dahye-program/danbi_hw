@@ -6,22 +6,19 @@ window.onload = function (){
 	makeClockFace( size );
 	setInterval( function(){ makeClockHands( size, fontSize ) }, 1000);
 };
-/* -- END MAIN -- */
 
-//convenience functions
+//convenience functions 편의 기능
 function cout( string ){ console.log( string ); }
 function id( string ){ return document.getElementById( string ); }
 
-//gets the pixel size of the font. Used
-//to change the amount of dot divs created
-//depending on the size of the font/clock
+// 글꼴의 픽셀 크기를 가져옴. 글꼴/시계의 크기에 따라 생성되는 도트 디브의 양을 변경하는 데 사용
 function getFontSize(){
   var analogClockID = id( "analog_clock" );
   var fontSize = window.getComputedStyle( analogClockID, null ).getPropertyValue( "font-size" );
   return parseFloat( fontSize );
 }
 
-//sets common styles for the clock
+//시계의 공통 스타일 설정
 function setAnalogClockStyles( _size ){
 	id( "analog_clock" ).style.cssText =
 		"position: relative;" +
@@ -31,17 +28,21 @@ function setAnalogClockStyles( _size ){
      "font-size: " + _size * 1.5 + "%;";
 }
 
-//create and move clock face divs into a circle
-//empty string in third arg tells createDivs to use
-//counter as innerHTML
+// create and move clock face divs into a circle
+// empty string in third arg tells createDivs to use
+// counter as innerHTML
+// clock face divs를 만들고 
+// 세 번째 인자의 circle 빈 문자열로 이동하면 createDivs가 카운터를 내부로 사용하도록 지시
 function makeClockFace( _size ){
 	createDivs(12, "num", "", "gray" );
 	moveDivs(12, "num", 30, _size );
 }
 
-//create the hands of the clock and
-//set the date object to degrees
+// create the hands of the clock and
+// set the date object to degrees
+// 시계바늘 만들고 각도 설정
 function makeClockHands( _size, _fontSize ){
+	// 시간 출력
 	let Hour = document.getElementById('hour');
   let Minute = document.getElementById('minute');
   let Second = document.getElementById('second');
@@ -60,17 +61,16 @@ function makeClockHands( _size, _fontSize ){
 
 	var dot = "&#149";
   var fontSize = _fontSize / 4;
-  cout( fontSize );
   
-	//create the second hand
+	//create the second hand(초침)
   var size = Math.floor( _size * 0.8 );
 	var secondHand = Math.floor( size / fontSize );
 	var secondID = "second";
 	var secondDegree = date.getSeconds() * 6;
-	createDivs( secondHand, secondID, "&#149", "green" );
+	createDivs( secondHand, secondID, dot, "green" );
 	moveDivs( secondHand, secondID, secondDegree, size );
 
-	//create the minute hand
+	//create the minute hand(분침)
   var size = Math.floor( _size * 0.6 );
 	var minuteHand = Math.floor( size / fontSize );
 	var minuteID = "minute";
@@ -79,7 +79,7 @@ function makeClockHands( _size, _fontSize ){
 	createDivs( minuteHand, minuteID, dot, "yellow" );
 	moveDivs( minuteHand, minuteID, minuteDegree, size );
 
-	//create the hour hand
+	//create the hour hand(시침)
 	var size = Math.floor( _size * 0.5 );
   var hourHand = Math.floor( size / fontSize );
 	var hourID = "hour";
@@ -102,10 +102,10 @@ function createDivs( _numberOfDivs, _idName, _innerHTML, _color ){
 			div.innerHTML = ( _innerHTML === "" ? ( i + 1 ) : _innerHTML );
 			div.style.position = "absolute";
        div.style.color = _color;
-			id( "analog_clock" ).appendChild( div );	
-		}//end for
-	}//end if
-}//end function
+			id( "analog_clock" ).appendChild( div );
+		}
+	}
+}
 
 //puts clock face number divs in a circle or hands in a line
 function moveDivs( _numberOfDivs, _idName, _degree, _size ){
@@ -117,9 +117,8 @@ function moveDivs( _numberOfDivs, _idName, _degree, _size ){
 	var clockRadius = _size;
 	var incrementValue;
 
-	//checks if creating clock face or hands
-	//if clock face, the for loop will increase degrees
-	//if clock hands, the for loop will increase the radius
+	// if clock face, the for loop will increase degrees
+	// if clock hands, the for loop will increase the radius
 	if( _idName === "num" ){
 		incrementValue = degrees / _numberOfDivs;
 	}else{
@@ -127,9 +126,9 @@ function moveDivs( _numberOfDivs, _idName, _degree, _size ){
 		clockRadius = 0;
 	}//endif
 
-	//loop iterates through the set of divs and
-	//either moves the numbers around in a circle
-	//or places the dot divs in a line
+	// loop iterates through the set of divs and
+	// either moves the numbers around in a circle
+	// or places the dot divs in a line
 	for( var i = 0; i < _numberOfDivs; i++ ){
 		var top = clockRadius * Math.sin( ( degree - degreeOffset ) * convertToRadian );
 		var left = clockRadius * Math.cos( ( degree - degreeOffset ) * convertToRadian );
@@ -144,7 +143,7 @@ function moveDivs( _numberOfDivs, _idName, _degree, _size ){
 			id( _idName + ( i + 1 ) ).style.left = ( left - positionOffset ) + "px";
 		}else{
       id( _idName + ( i + 1 ) ).style.left = left + "px";
-    }//endif
+    }
 
 		//if creating the clock face,
 		//increment by degrees, otherwise icrement by the radius
@@ -152,6 +151,6 @@ function moveDivs( _numberOfDivs, _idName, _degree, _size ){
 			degree += incrementValue;
 		}else{
 			clockRadius += incrementValue;
-		}//end if
-	}//end for
-}//end function
+		}
+	}
+}

@@ -21,7 +21,6 @@ const contentName = document.querySelectorAll('.content');
 homeIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#ff0000';
   pointer.style.backgroundColor = '#ff0000'
-  homeIcon.style.backgroundColor = 'transparent';
   pointer.style.top = homeIconPosition + "px";
 
   contentName.forEach((el, i)=>{
@@ -33,11 +32,10 @@ homeIcon.addEventListener('click', (e)=>{
 profileIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#0000ff';
   pointer.style.backgroundColor = '#0000ff';
-  profileIcon.style.backgroundColor = 'transparent';
   pointer.style.top = profileIconPosition + "px";
 
-  contentName.forEach((el, i)=>{
-    contentName[i].classList.remove('selected');
+  contentName.forEach((el)=>{
+    el.classList.remove('selected');
   })
   contentName[1].classList.add("selected");
 })
@@ -45,11 +43,10 @@ profileIcon.addEventListener('click', (e)=>{
 messageIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#00ff00';  
   pointer.style.backgroundColor = '#00ff00';
-  messageIcon.style.backgroundColor = 'transparent';
   pointer.style.top = messageIconPosition + "px";
 
-  contentName.forEach((el, i)=>{
-    contentName[i].classList.remove('selected');
+  contentName.forEach((el)=>{
+    el.classList.remove('selected');
   })
   contentName[2].classList.add("selected");
 })
@@ -57,11 +54,10 @@ messageIcon.addEventListener('click', (e)=>{
 helpIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#33ccff';
   pointer.style.backgroundColor = '#33ccff';
-  helpIcon.style.backgroundColor = 'transparent';
   pointer.style.top = helpIconPosition + "px";
 
-  contentName.forEach((el, i)=>{
-    contentName[i].classList.remove('selected');
+  contentName.forEach((el)=>{
+    el.classList.remove('selected');
   })
   contentName[3].classList.add("selected");
 })
@@ -69,11 +65,10 @@ helpIcon.addEventListener('click', (e)=>{
 settingsIcon.addEventListener('click', (e)=>{
   body.style.backgroundColor = '#ff9900';
   pointer.style.backgroundColor = '#ff9900';
-  settingsIcon.style.backgroundColor = 'transparent';
   pointer.style.top = settingsIconPosition + "px";  
 
-  contentName.forEach((el, i)=>{
-    contentName[i].classList.remove('selected');
+  contentName.forEach((el)=>{
+    el.classList.remove('selected');
   })
   contentName[4].classList.add("selected");
 })

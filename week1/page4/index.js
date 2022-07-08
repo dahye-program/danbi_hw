@@ -20,15 +20,15 @@ customers.innerHTML = list.join('');
 // Recent Orders Status
 const ordersStatus = document.querySelectorAll('.orders_status');
 
-ordersStatus.forEach((e, i)=>{
-  if(ordersStatus[i].textContent === 'Delivered'){
-    ordersStatus[i].style.backgroundColor = '#00ff00';
-  }else if(ordersStatus[i].textContent === 'Pending'){
-    ordersStatus[i].style.backgroundColor = '#ff6347';
-  }else if(ordersStatus[i].textContent === 'Return'){
-    ordersStatus[i].style.backgroundColor = '#ff0000';
-  }else if(ordersStatus[i].textContent === 'In Progress'){
-    ordersStatus[i].style.backgroundColor = '#448ccb';
+ordersStatus.forEach((e)=>{
+  if(e.textContent === 'Delivered'){
+    e.style.backgroundColor = '#00ff00';
+  }else if(e.textContent === 'Pending'){
+    e.style.backgroundColor = '#ff6347';
+  }else if(e.textContent === 'Return'){
+    e.style.backgroundColor = '#ff0000';
+  }else if(e.textContent === 'In Progress'){
+    e.style.backgroundColor = '#448ccb';
   }else{}
 })
 
@@ -41,7 +41,7 @@ const navname = document.querySelectorAll('.navicontent');
 menubarActiveCheck.addEventListener('click', ()=>{
   navigation.className === 'navigation' ? navigation.classList.add('on') : navigation.classList.remove('on');
   navigation.className === 'navigation on' ? logocontent.classList.add('none') : logocontent.classList.remove('none');
-  navname.forEach((e, i)=>{
-    navigation.className === 'navigation on' ? navname[i].classList.add('none') : navname[i].classList.remove('none');
+  navname.forEach((e)=>{
+    navigation.className === 'navigation on' ? e.classList.add('none') : e.classList.remove('none');
   })
 })

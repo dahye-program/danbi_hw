@@ -63,8 +63,6 @@ b{
 }
 
 .javascript {
-  max-width: 90px;
-  max-height: 90px;
   top: 45px;
   left: 45px;
 }
@@ -74,8 +72,6 @@ b{
 }
 
 .photoshop {
-  width: 200px;
-  height: 200px;
   top: 45px;
   left: 45px;
 }
@@ -94,11 +90,8 @@ b{
   fill: transparent;
   stroke: #333;
   stroke-width: 20;
-  stroke-dasharray: 534;
+  stroke-dasharray: 537;
   transition: stroke-dashoffset 1s;
-  -webkit-animation-play-state: running;
-  
-  -moz-transform: rotate(-89deg) translateX(-190px);
 }
 
 /* END Circle colors and graphic positions */
@@ -111,7 +104,7 @@ b{
 
 .chart[data-percent='85'] .outer {
   stroke-dashoffset: 70;
-  -webkit-animation: show100 2s;
+  -webkit-animation: show85 2s;
   animation: show85 2s;
 }
 
@@ -155,7 +148,7 @@ b{
   }
   
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 70;
   }
 }
 
