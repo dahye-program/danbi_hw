@@ -23,9 +23,19 @@ body{
 .title{
   padding: 15px;
   padding-bottom: 50px;
+  display: flex;
 }
 
 .titlecontent.none{
+  display: none;
+}
+
+.menubaricon input[type=checkbox]{
+  display: none;
+  cursor: pointer;
+}
+
+.menubaricon{
   display: none;
 }
 
@@ -272,8 +282,27 @@ button{
 }
 
 @media (max-width: 1024px){
-  .navlist{
+  /* .navlist{
     display: none;
+  } */
+
+  .navigation{
+    display: none;
+  }
+
+  .navigation.on{
+    display: unset;
+    width: 90%;
+    transition: all 0.5s;
+  }
+
+  .titlecontent.none{
+    display: unset;
+  }
+
+  .navicontent.none{
+    display: unset;
+    transition: all 0.5s;
   }
 
   .cardbox{
@@ -307,9 +336,21 @@ button{
 }
 
 @media (max-width: 768px){
-  .navlist{
-    display: none;
+  .navigation{
+    visibility: hidden;
   }
+
+  .navigation.on{
+    visibility: visible;
+    width: 100%;
+    transition: all 0.5s;
+  }
+
+  .menubaricon{
+    padding-left: 60%;
+    display: unset;
+  }
+
   .main{
     display: flex;
     flex-direction: column;
@@ -341,7 +382,11 @@ button{
   .orders_table_content{
     font-size: 14px;
   }
-  
+
+  .orders_wrap{
+    overflow: scroll;
+  }
+
   button{
     font-size: 12px;
   }
