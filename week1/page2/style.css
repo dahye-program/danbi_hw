@@ -43,7 +43,6 @@ b{
 }
 
 /* END Container styles */
-
 /* Colors for the circles and positions for the graphics */
 .html {
   top: 50px;
@@ -99,17 +98,10 @@ b{
   transition: stroke-dashoffset 1s;
   -webkit-animation-play-state: running;
   
-  /* firefox bug fix - won't rotate at 90deg angles */
   -moz-transform: rotate(-89deg) translateX(-190px);
 }
 
-.chart:hover .outer {
-  stroke-dashoffset: 534 !important;
-  -webkit-animation-play-state: paused;
-}
 /* END Circle colors and graphic positions */
-
-
 /* Set the initial values for the animation */
 .chart[data-percent='95'] .outer {
   stroke-dashoffset: 45;
@@ -137,7 +129,6 @@ b{
 
 /* END set initial animation values */
 
-/* Keyframes for the initial animation */
 @-webkit-keyframes show95 {
   from {
     stroke-dashoffset: 537;
@@ -217,5 +208,3 @@ b{
     stroke-dashoffset: 210;
   }
 }
-
-/* END Keyframes for the initial animation */
