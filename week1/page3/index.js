@@ -1,9 +1,3 @@
-/*
-Javascript Analog Clock
-
-Change the size variable to resize.
-*/
-
 /* -- MAIN FUNCTION -- */
 window.onload = function (){
 	var size = 100;
@@ -34,49 +28,64 @@ function setAnalogClockStyles( _size ){
 		"top: " + _size * 1.2 + "px;" +
 		"left: " + _size * 1.2 + "px;" +
 		"font-weight: bold;" +
-     "font-size: " + _size * 2 + "%;";
+     "font-size: " + _size * 1.5 + "%;";
 }
 
 //create and move clock face divs into a circle
 //empty string in third arg tells createDivs to use
 //counter as innerHTML
 function makeClockFace( _size ){
-	createDivs(12, "num", "", "black" );
+	createDivs(12, "num", "", "gray" );
 	moveDivs(12, "num", 30, _size );
 }
 
 //create the hands of the clock and
 //set the date object to degrees
 function makeClockHands( _size, _fontSize ){
-	var date = new Date();
+	let Hour = document.getElementById('hour');
+  let Minute = document.getElementById('minute');
+  let Second = document.getElementById('second');
+  let AmPm = document.getElementById('amOrpm');
+
+  let date = new Date();
+
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+
+  Hour.innerText =  hours < 10 ? `0${hours}` : hours +` :`;
+  Minute.innerText = minutes < 10 ? `0${minutes}` : minutes;
+  Second.innerText = seconds < 10 ? `0${seconds}`: seconds;
+  AmPm.innerText = hours >= 12 ? `PM` : 'AM';
+
 	var dot = "&#149";
   var fontSize = _fontSize / 4;
   cout( fontSize );
   
 	//create the second hand
-  var size = Math.floor( _size * 1.1 );
+  var size = Math.floor( _size * 0.8 );
 	var secondHand = Math.floor( size / fontSize );
 	var secondID = "second";
 	var secondDegree = date.getSeconds() * 6;
-	createDivs( secondHand, secondID, dot, "red" );
+	createDivs( secondHand, secondID, "&#149", "green" );
 	moveDivs( secondHand, secondID, secondDegree, size );
 
 	//create the minute hand
-  var size = Math.floor( _size * 1 );
+  var size = Math.floor( _size * 0.6 );
 	var minuteHand = Math.floor( size / fontSize );
 	var minuteID = "minute";
 	
 	var minuteDegree = ( date.getMinutes() * 6 ) + ( date.getSeconds() * 0.1 );
-	createDivs( minuteHand, minuteID, dot, "green" );
+	createDivs( minuteHand, minuteID, dot, "yellow" );
 	moveDivs( minuteHand, minuteID, minuteDegree, size );
 
 	//create the hour hand
-	var size = Math.floor( _size * 0.8 );
+	var size = Math.floor( _size * 0.5 );
   var hourHand = Math.floor( size / fontSize );
 	var hourID = "hour";
 	
 	var hourDegree = ( date.getHours() * 30 ) + ( date.getMinutes() * .5 );
-	createDivs( hourHand, hourID, dot, "black" );
+	createDivs( hourHand, hourID, dot, "#e91e63" );
 	moveDivs( hourHand, hourID, hourDegree, size );
 }
 
@@ -141,30 +150,8 @@ function moveDivs( _numberOfDivs, _idName, _degree, _size ){
 		//increment by degrees, otherwise icrement by the radius
 		if( _idName === "num" ){
 			degree += incrementValue;
-      
 		}else{
 			clockRadius += incrementValue;
 		}//end if
 	}//end for
 }//end function
-
-function clock(){
-  let Hour = document.getElementById('hour');
-  let Minute = document.getElementById('minute');
-  let Second = document.getElementById('second');
-  let AmPm = document.getElementById('amOrpm');
-
-  let time = new Date();
-
-  let hours = time.getHours();
-  let minutes = time.getMinutes();
-  let seconds = time.getSeconds();
-
-  Hour.innerText =  hours < 10 ? `0${hours}` : hours +` :`;
-  Minute.innerText = minutes < 10 ? `0${minutes}` : minutes;
-  Second.innerText = seconds < 10 ? `0${seconds}`: seconds;
-  AmPm.innerText = hours > 12 ? `PM` : 'AM';  
-}
-
-clock();
-setInterval(clock, 1000); // 1초마다 실행
