@@ -12,11 +12,12 @@ orderstable.innerHTML = orderslist.join('');
 // Recent Customers data
 const customers = document.querySelector('.customers_wrap');
 let list = CustomersData.map((value)=>{
-  return '<div class="customers_info"><div class="customers_name">'+value.Name+'</div>'+'<div class="customers_country">'+value.Country+'</div></div>'
+  return '<div class="profile"><span><img src="imgs/profile.png" width="30px" height="30px"/></span><div class="customers_info"><div class="customers_name">'+value.Name+'</div>'+'<div class="customers_country">'+value.Country+'</div></div></div><br/>'
 })
 
 customers.innerHTML = list.join('');
 
+// Recent Orders Status
 const ordersStatus = document.querySelectorAll('.orders_status');
 
 ordersStatus.forEach((e, i)=>{
@@ -31,9 +32,9 @@ ordersStatus.forEach((e, i)=>{
   }else{}
 })
 
+// 사이드바
 const menubarActiveCheck = document.querySelector('#hamburger');
 const navigation = document.querySelector('.navigation');
-const navcontent = document.querySelector('.navicontent');
 const logocontent = document.querySelector('.titlecontent');
 const navname = document.querySelectorAll('.navicontent');
 

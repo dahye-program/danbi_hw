@@ -174,7 +174,7 @@ input:focus{
   grid-row: 3;
   display: flex;
   justify-content: space-between;
-  height: 110%;
+  /* height: 110%; */
 }
 
 /* orders */
@@ -260,14 +260,19 @@ button{
 .customers_wrap{
 }
 
+.profile:hover{
+  background-color: dodgerblue;
+  color: white;
+}
+
 .customers_info{
+  display: inline-block;
   padding-left: 10px;
   cursor: pointer;
 }
 
 .customers_info:hover{
-  background-color: dodgerblue;
-  color: white;
+
 }
 
 .customers_name{
@@ -292,7 +297,7 @@ button{
 
   .navigation.on{
     display: unset;
-    width: 90%;
+    width: 30%;
     transition: all 0.5s;
   }
 
