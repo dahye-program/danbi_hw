@@ -39,6 +39,10 @@ body{
   display: none;
 }
 
+label{
+  cursor: pointer;
+}
+
 .navlist {
   height: 100vh;
   list-style-type: none;
