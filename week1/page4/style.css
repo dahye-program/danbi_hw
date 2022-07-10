@@ -16,7 +16,6 @@ body{
 .navigation{
   width: 300px;
   color:white;
-  position: relative;
   float: left;
   transition: all 0.5s;
 }
@@ -85,7 +84,6 @@ img{
 /* main section */
 .main{
   display: grid;
-  /* width: calc(100%-300px); */
   width: auto;
 }
 
