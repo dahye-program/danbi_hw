@@ -1,0 +1,66 @@
+.topbar{
+  width: auto;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menubar{
+  cursor: pointer;
+}
+
+.menubar input[type=checkbox]{
+  display: none;
+  cursor: pointer;
+}
+
+.menubar input[type=checkbox]:checked .main{
+  width: 100%;
+}
+
+img{
+  width: 40px;
+  height: 40px;
+}
+
+input{
+  width: 30%;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid darkgray;
+  padding: 5px;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png");
+  background-size: contain;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+}
+
+input:focus{
+  background-image: none;
+  background-position: -10px center;
+  text-indent: 0;
+}
+
+.profile{
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px){
+  .menubaricon{
+    padding-left: 60%;
+    display: unset;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input{
+    width: 60%;
+  }
+}
