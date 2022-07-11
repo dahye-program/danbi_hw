@@ -1,0 +1,75 @@
+/* cardbox */
+.cardbox{
+  display: flex;
+  grid-column: 1;
+  grid-row: 2;  
+}
+
+.card{
+  width: 22%;
+  height: 150px;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card:hover{
+  background-color: dodgerblue;
+}
+
+.card:hover .card_value, .card:hover .card_title{
+  color: white;
+}
+
+.card_wrap{
+  display: flex;
+  padding: 10px;
+}
+
+.card_wrap > img{
+  padding: 30px;
+}
+
+.card_value{
+  color: dodgerblue;
+  font-size: 40px;
+}
+
+.card_title{
+  color: darkgray;
+}
+
+.card_icon{
+  width: 60px;
+  height: 60px;
+}
+
+
+@media (max-width: 1024px){
+  .cardbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .card{
+    min-height: 150px;
+    flex-basis: 30%;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+}
+
+
+@media (max-width: 768px){
+  .cardbox{
+    flex-direction: column;
+    padding: 0;
+  }
+  .card{
+    width: 90%;
+    height: 15%;
+  }
+}
