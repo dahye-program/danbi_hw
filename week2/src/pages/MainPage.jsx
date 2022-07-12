@@ -1,9 +1,10 @@
+import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
 
-const Mainpage = () => {
+const MainPage = () => {
   return(
   <>
     <Sidebar />
@@ -14,4 +15,4 @@ const Mainpage = () => {
   );
 }
 
-export default Mainpage;
+export default MainPage;
