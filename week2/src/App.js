@@ -1,11 +1,13 @@
-import Mainpage from './pages/Mainpage';
+import React from 'react';
 import Globalstyle from './styles/Globalstyle.css'
+import Router from './router/Router';
 
 function App() {
   return (
-    <div className="App">
-      <Mainpage />
-    </div>
+    <>
+    <Globalstyle />
+    <Router />
+    </>
   );
 }
 
