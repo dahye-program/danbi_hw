@@ -10,7 +10,7 @@ const Sidebar = () => {
           <p className='titlecontent'>Brand Name</p>
           <div className='menubaricon'>
           <input type="checkbox" id="hamburger"/>
-          <label for="hamburger"><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
+          <label htmlFor="hamburger"><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
           </div>
         </li>
         <li className="navicon"><img src="images/dashboard.png" alt='대시보드 아이콘'/><a className="navicontent">Dashboard</a></li>

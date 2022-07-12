@@ -7,7 +7,7 @@ const Header = () => {
     <div className='topbar'>
       <div className='menubar'>
         <input type='checkbox' id='hamburger'/>
-        <label for='hamburger'>
+        <label htmlFor='hamburger'>
           <span><img src='images/hamburger.png' alt="사이드바 아이콘"/></span>
         </label>
       </div>
