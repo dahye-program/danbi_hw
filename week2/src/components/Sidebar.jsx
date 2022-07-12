@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from './Sidebar.css'
 
-const Sidebar = () => {
+const Sidebar = ({value}) => {
   return(
-    <section className='navigation'>
+    <section 
+      className={
+        value === 'navigation' ? 'navigation on' : 'navigation'
+      }>
       <ul className='navlist'>
         <li className='title'>
           <img src="images/logo.png" alt='로고 아이콘'/>
