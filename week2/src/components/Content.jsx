@@ -36,8 +36,8 @@ const Content = () => {
           </div>
           {OrdersData && OrdersData.map((e, index)=>{
             return(
-              <div className="orders_wrap">
-                  <ul className="orders_table_content" key={index}>
+              <div className="orders_wrap" key={index}>
+                  <ul className="orders_table_content" >
                     <li className="orders_name">{e.Name}</li>
                     <li className="orders_price">{e.Price}</li>
                     <li className="orders_pament">{e.Pament}</li>
@@ -49,7 +49,7 @@ const Content = () => {
         <div className="customers">
           <h2 className="customers_title">Recent Customers</h2>
           <div className="customers_profile">
-            <div class="customers_wrap">
+            <div className="customers_wrap">
               {CustomersData && CustomersData.map((e, index)=>{
                 return(
                 <div className="profile" key={index}>
