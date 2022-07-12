@@ -1,13 +1,21 @@
 import React from 'react';
 import styles from './Header.css'
+import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ menuFunction }) => {
+  const [data, setData] = useState('navigation');
+
+  const handleClick =()=>{
+    data === 'navigation' ? setData('navigation on') : setData('navigation')
+    menuFunction(data);
+  }
+
   return(
     <>
     <div className='topbar'>
       <div className='menubar'>
         <input type='checkbox' id='hamburger'/>
-        <label htmlFor='hamburger'>
+        <label htmlFor='hamburger' onClick={()=>{handleClick()}}>
           <span><img src='images/hamburger.png' alt="사이드바 아이콘"/></span>
         </label>
       </div>
