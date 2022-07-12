@@ -1,0 +1,20 @@
+.Container{
+  width: auto;
+  padding: 0 20px;
+}
+
+.Wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.Title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.Text{
+  font-size: 14px;
+  line-height: 24px;
+}
