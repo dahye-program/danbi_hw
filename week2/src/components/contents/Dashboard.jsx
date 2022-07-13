@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/Dashboard.css';
+import styles from '../../styles/contents/Dashboard.css';
 import CARD from '../../data/CARDDATA';
 import ORDERS from '../../data/ORDERSDATA';
 import CUSTOMERS from '../../data/CUSTOMERSDATA';

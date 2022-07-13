@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/Message.css';
+import styles from '../../styles/contents/Message.css';
 
 const Message = () => {
 
