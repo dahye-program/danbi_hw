@@ -60,7 +60,7 @@ label > img{
   padding: 20px 0;
 }
 
-.navicon:hover{
+.navicon:hover, .navicon.active{
   background-color: white;
   color: dodgerblue;
 }
@@ -71,11 +71,19 @@ label > img{
   height: 35px;
 }
 
+.navicontent{
+  display: inline;
+}
+
 .navicontent.none{
   display: none;
   transition: all 0.5s;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 
 @media (max-width: 1024px){
   .navigation{
@@ -97,7 +105,6 @@ label > img{
     transition: all 0.5s;
   }
 }
-
 
 @media (max-width: 768px){
   .navigation{

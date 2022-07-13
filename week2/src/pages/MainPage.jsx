@@ -10,11 +10,16 @@ const MainPage = () => {
   const menuFunction = (x) => {
     setMenu(x);
   };
+
+  const clickMenuFunction = (index) => {
+    console.log(index);
+  }
+  
   return(
   <>
-    <Sidebar value={menu}/>
+    <Sidebar value={menu} clickMenuFunction={clickMenuFunction}/>
     <Header menuFunction={menuFunction}/>
-    <Content />
+    <Content/>
     <Footer />
   </>
   );
