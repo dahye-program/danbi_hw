@@ -7,22 +7,24 @@ import { useState } from 'react';
 
 const MainPage = () => {
   const [menu, setMenu] = useState('');
+  const [menuName, setMenuname] = useState('');
   const menuFunction = (x) => {
     setMenu(x);
   };
 
-  const clickMenuFunction = (index) => {
-    console.log(index);
+  const clickMenuFunction = (menuName) => {
+    setMenuname(menuName);
   }
   
   return(
   <>
     <Sidebar value={menu} clickMenuFunction={clickMenuFunction}/>
     <Header menuFunction={menuFunction}/>
-    <Content/>
+    <Content menuName={menuName}/>
     <Footer />
   </>
   );
 }
 
 export default MainPage;
+
