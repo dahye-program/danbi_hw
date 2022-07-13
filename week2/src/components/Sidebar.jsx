@@ -1,7 +1,25 @@
 import React from 'react';
+import { useEffect } from 'react';
 import styles from './Sidebar.css'
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import SIDEBAR from '../data/SIDEBARDATA';
 
-const Sidebar = ({value}) => {
+
+const Sidebar = ({value, clickMenuFunction}) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation();
+
+  const contentClick = (name) => {
+    clickMenuFunction(name);
+  }
+
+  useEffect(() => {
+    const curPath = window.location.pathname.split('/')[1];
+    const activeItem = SIDEBAR.findIndex(item => item.content === curPath);
+    setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+  }, [location]);
+
   return(
     <section 
       className={
@@ -16,13 +34,16 @@ const Sidebar = ({value}) => {
           <label htmlFor="hamburger"><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
           </div>
         </li>
-        <li className="navicon"><img src="images/dashboard.png" alt='대시보드 아이콘'/><a className="navicontent">Dashboard</a></li>
-        <li className="navicon"><img src="images/customers.jpeg" alt='커스터머 아이콘'/><a className="navicontent">Customers</a></li>
-        <li className="navicon"><img src="images/message.png" alt='메시지 아이콘'/><a className="navicontent">Message</a></li>
-        <li className="navicon"><img src="images/help.png" alt='헬프 아이콘'/><a className="navicontent">Help</a></li>
-        <li className="navicon"><img src="images/settings.png" alt='세팅 아이콘'/><a className="navicontent">Settings</a></li>
-        <li className="navicon"><img src="images/password.png" alt='패스워드 아이콘'/><a className="navicontent">Password</a></li>
-        <li className="navicon"><img src="images/signout.jpeg" alt='아웃 아이콘'/><a className="navicontent">Sign Out</a></li>
+        {SIDEBAR && SIDEBAR.map((e, index)=> {
+          return(
+            <Link to={e.to} key={index}>
+            <li 
+            className={`navicon ${activeIndex === index ? 'active' : ''}`} 
+            onClick={()=>{contentClick(e.name)}}>
+            <img src={e.src}/>
+           <p className="navicontent">{e.name}</p>
+          </li>
+          </Link>)})}
       </ul>
     </section>
   );

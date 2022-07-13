@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './Content.css'
-import card from '../data/CardData'
-import OrdersData from '../data/OrdersData'
-import CustomersData from '../data/CustomersData';
+import CARD from '../data/CARDDATA'
+import ORDERS from '../data/ORDERSDATA'
+import CUSTOMERS from '../data/CUSTOMERSDATA';
 
 const Content = () => {
   return(
     <div className='main'>
     <div className="cardbox">
-    {card && card.map((e, index)=>{
+    {CARD && CARD.map((e, index)=>{
       return(
       <div key={index} className="card">
           <div className="card_wrap">
@@ -34,7 +34,7 @@ const Content = () => {
             <h4 className="title">Payment</h4>
             <h4 className="title">Status</h4>
           </div>
-          {OrdersData && OrdersData.map((e, index)=>{
+          {ORDERS && ORDERS.map((e, index)=>{
             return(
               <div className="orders_wrap" key={index}>
                   <ul className="orders_table_content" >
@@ -50,7 +50,7 @@ const Content = () => {
           <h2 className="customers_title">Recent Customers</h2>
           <div className="customers_profile">
             <div className="customers_wrap">
-              {CustomersData && CustomersData.map((e, index)=>{
+              {CUSTOMERS && CUSTOMERS.map((e, index)=>{
                 return(
                 <div className="profile" key={index}>
                   <span><img src="images/profile.png" alt='프로필 사진'/></span>
