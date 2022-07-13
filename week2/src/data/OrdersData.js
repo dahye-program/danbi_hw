@@ -2,7 +2,7 @@ const OrdersData = [
   {
     Name: 'Star Refrigerator',
     Price: '$1200',
-    Payment: 'Paid',
+    Pament: 'Paid',
     Status: 'Delivered'
   },
   {
