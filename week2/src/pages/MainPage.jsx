@@ -20,7 +20,7 @@ const MainPage = () => {
   <>
     <Sidebar value={menu} clickMenuFunction={clickMenuFunction}/>
     <Header menuFunction={menuFunction}/>
-    <Content menuName={menuName}/>
+    <Content />
     <Footer />
   </>
   );
