@@ -3,6 +3,7 @@
   width: 300px;
   color:white;
   float: left;
+  /* position: sticky; */
   transition: all 0.5s;
 }
 
@@ -46,7 +47,7 @@ label > img{
 }
 
 .navlist {
-  height: 100vh;
+  height: 890px;
   list-style-type: none;
   margin: 0;
   padding-left: 0px;
@@ -62,7 +63,6 @@ label > img{
 .navicon:hover{
   background-color: white;
   color: dodgerblue;
-  border-radius: 50px;
 }
 
 .navicon > img{

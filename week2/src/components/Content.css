@@ -1,6 +1,5 @@
 .main{
   display: grid;
-  width: auto;
 }
 
 /* cardbox */
@@ -11,7 +10,7 @@
 }
 
 .card{
-  width: 22%;
+  width: 20%;
   height: 150px;
   margin: 20px;
   border-radius: 30px;
@@ -58,7 +57,6 @@
   grid-row: 3;
   display: flex;
   justify-content: space-between;
-  /* height: 110%; */
 }
 
 /* orders */
@@ -92,6 +90,7 @@ button{
 }
 
 .orders_table_title{
+  height: 50px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -160,7 +159,7 @@ button{
 }
 
 .customers_name{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -169,7 +168,6 @@ button{
   font-weight: bold;
   padding-bottom: 20px;
 }
-
 
 @media (max-width: 1024px){
   .cardbox{
@@ -181,7 +179,7 @@ button{
   .card{
     min-height: 150px;
     flex-basis: 30%;
-    flex-shrink: 1;
+    /* flex-shrink: 1; */
     flex-grow: 1;
   }
 
@@ -202,7 +200,6 @@ button{
   }
 }
 
-
 @media (max-width: 768px){
   .cardbox{
     flex-direction: column;
@@ -211,6 +208,7 @@ button{
   .card{
     width: 90%;
     height: 15%;
+    flex: none;
   }
 
   /* details */
@@ -227,7 +225,7 @@ button{
   }
 
   .orders_table_content{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .orders_wrap{
@@ -235,7 +233,7 @@ button{
   }
 
   button{
-    font-size: 12px;
+    font-size: 10px;
   }
 
   /* customers */

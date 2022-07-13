@@ -6,7 +6,7 @@ import CustomersData from '../data/CustomersData';
 
 const Content = () => {
   return(
-    <section className='main'>
+    <div className='main'>
     <div className="cardbox">
     {card && card.map((e, index)=>{
       return(
@@ -64,7 +64,7 @@ const Content = () => {
             </div>
           </div>
       </div>
-    </section>
+    </div>
   );
 }
 
