@@ -72,7 +72,7 @@ const Content = ({menuName}) => {
     );
   }else{
     return(
-      <div className=''>
+      <div className='others_page'>
         <h1>{menuName} 페이지 입니다.</h1>
       </div>
     )

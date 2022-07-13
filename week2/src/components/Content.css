@@ -169,6 +169,12 @@ button{
   padding-bottom: 20px;
 }
 
+.others_page{
+  display: inline-block;
+  height: 820px;
+  padding-left: 30px;
+}
+
 @media (max-width: 1024px){
   .cardbox{
     display: flex;
