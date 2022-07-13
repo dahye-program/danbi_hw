@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import styles from './Sidebar.css'
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import SidebarData from '../data/SidebarData';
+import SIDEBAR from '../data/SIDEBARDATA';
 
 
 const Sidebar = ({value, clickMenuFunction}) => {
@@ -16,7 +16,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
 
   useEffect(() => {
     const curPath = window.location.pathname.split('/')[1];
-    const activeItem = SidebarData.findIndex(item => item.content === curPath);
+    const activeItem = SIDEBAR.findIndex(item => item.content === curPath);
     setActiveIndex(curPath.length === 0 ? 0 : activeItem);
   }, [location]);
 
@@ -34,7 +34,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
           <label htmlFor="hamburger"><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
           </div>
         </li>
-        {SidebarData && SidebarData.map((e, index)=> {
+        {SIDEBAR && SIDEBAR.map((e, index)=> {
           return(
             <Link to={e.to} key={index}>
             <li 
