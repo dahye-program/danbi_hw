@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../../styles/contents/Dashboard.css';
-import CARD from '../../data/CARDDATA';
-import ORDERS from '../../data/ORDERSDATA';
-import CUSTOMERS from '../../data/CUSTOMERSDATA';
+import CARD from '../../data/CARD_DATA';
+import ORDERS from '../../data/ORDERS_DATA';
+import CUSTOMERS from '../../data/CUSTOMERS_DATA';
 
 const Dashboard = () => {
   return(
@@ -34,6 +34,7 @@ const Dashboard = () => {
             <h4 className="title">Payment</h4>
             <h4 className="title">Status</h4>
           </div>
+          <div className='orders_data_wrap'>
           {ORDERS && ORDERS.map((e, index)=>{
             return(
               <div className="orders_wrap" key={index}>
@@ -45,6 +46,7 @@ const Dashboard = () => {
                   </ul>
               </div>
             )})}
+          </div>
       </div>
         <div className="customers">
           <h2 className="customers_title">Recent Customers</h2>
