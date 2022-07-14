@@ -41,7 +41,10 @@ const Sidebar = ({value, clickMenuFunction}) => {
             className={`navicon ${activeIndex === index ? 'active' : ''}`} 
             onClick={()=>{contentClick(e.name)}}>
             <img src={e.src}/>
-           <p className="navicontent">{e.name}</p>
+           <p 
+              className={
+                value === 'navigation' ? 'navicontent none' : 'navicontent'
+              }>{e.name}</p>
           </li>
           </Link>)})}
       </ul>
