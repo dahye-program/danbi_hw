@@ -1,6 +1,13 @@
 .footer{
   width: auto;
   padding: 20px;
+  height: auto;
+  min-height: 100%;
+}
+
+.wrap{
+  height: 160px;
+  position : relative;
 }
 
 .text{
