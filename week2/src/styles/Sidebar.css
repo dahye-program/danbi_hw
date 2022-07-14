@@ -94,11 +94,11 @@ a{
 }
 
 @media (max-width: 1024px){
-  .navigation{
+  .navigation.on{
     display: none;
   }
 
-  .navigation.on{
+  .navigation{
     display: unset;
     width: 30%;
     transition: all 0.5s;
@@ -115,12 +115,12 @@ a{
 }
 
 @media (max-width: 768px){
-  .navigation{
-    visibility: hidden;
+  .navigation.on{
+    display: none;
   }
 
-  .navigation.on{
-    visibility: visible;
+  .navigation{
+    display: unset;
     width: 100%;
     transition: all 0.5s;
   }
