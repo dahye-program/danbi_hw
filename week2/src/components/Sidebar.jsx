@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SIDEBAR from '../data/SIDEBAR_DATA';
 
-
 const Sidebar = ({value, clickMenuFunction}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
@@ -46,6 +45,18 @@ const Sidebar = ({value, clickMenuFunction}) => {
                 value === 'navigation' ? 'navicontent none' : 'navicontent'
               }>{e.name}</p>
           </li>
+          {e.children && e.children.map((child, index)=>{
+            return(
+              <Link to={child.to} key={index}>
+              <li 
+                className={
+                  value === 'navigation' ? 'navicon none' : 'navicon'} 
+                  onClick={()=>{contentClick(child.name)}}>
+                <p className='navicontent child'>{child.name}</p>
+              </li>
+              </Link>
+            )
+          })}
           </Link>)})}
       </ul>
     </section>
@@ -53,3 +64,4 @@ const Sidebar = ({value, clickMenuFunction}) => {
 }
 
 export default Sidebar;
+
