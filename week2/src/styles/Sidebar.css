@@ -71,6 +71,10 @@ label > img{
   height: 35px;
 }
 
+.navicon.none{
+  display: none;
+}
+
 .navicontent{
   display: inline;
 }
@@ -78,6 +82,10 @@ label > img{
 .navicontent.none{
   display: none;
   transition: all 0.5s;
+}
+
+.navicontent.child{
+  padding-left: 100px;
 }
 
 a{

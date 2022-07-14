@@ -8,8 +8,11 @@ const Router = () => {
             <Routes>
                 <Route exact path="" element={<MainPage />} />
                 <Route path='/dashboard' element={<MainPage />} />
+                <Route path='/dashboard1' element={<MainPage />} />
+                <Route path='/dashboard2' element={<MainPage />} />
                 <Route path='/customers' element={<MainPage />} />
                 <Route path='/message' element={<MainPage />} />
+                <Route path='/message1' element={<MainPage />} />
                 <Route path='/help' element={<MainPage />} />
                 <Route path='/settings' element={<MainPage />} />
                 <Route path='/password' element={<MainPage />} />
