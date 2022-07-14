@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import styles from '../styles/Sidebar.css';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import SIDEBAR from '../data/SIDEBARDATA';
+import SIDEBAR from '../data/SIDEBAR_DATA';
 
 
 const Sidebar = ({value, clickMenuFunction}) => {
