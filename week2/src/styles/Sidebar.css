@@ -123,6 +123,8 @@ a{
     display: unset;
     width: 100%;
     transition: all 0.5s;
+    position: absolute;
+    z-index: 999;
   }
 
   .menubaricon{
