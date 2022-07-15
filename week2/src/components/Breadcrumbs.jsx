@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../styles/Breadcrumbs.css';
 
 const Breadcrumbs = ({menuName}) => {
-  console.log(menuName);
   return(
     <>
       <div className='Breadcrumbs'>
