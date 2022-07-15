@@ -7,20 +7,23 @@ import Footer from '../components/Footer';
 import { useState } from 'react';
 
 const MainPage = () => {
-  const [menu, setMenu] = useState('');
+  const [side, setSide] = useState('');
   const [menuName, setMenuname] = useState('');
-  const menuFunction = (x) => {
-    setMenu(x);
+
+  // Sidebar로 전달하기위한 side value
+  const isSideFunction = (x) => {
+    setSide(x);
   };
 
+  // Breadcrumb 메뉴 이름
   const clickMenuFunction = (menuName) => {
     setMenuname(menuName);
   }
   
   return(
   <>
-    <Sidebar value={menu} clickMenuFunction={clickMenuFunction}/>
-    <Header menuFunction={menuFunction}/>
+    <Sidebar value={side} clickMenuFunction={clickMenuFunction}/>
+    <Header isSideFunction={isSideFunction}/>
     <Breadcrumbs menuName={menuName}/>
     <Content menuName={menuName}/>
     <Footer />

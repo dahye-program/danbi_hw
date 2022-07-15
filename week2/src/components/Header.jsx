@@ -2,12 +2,12 @@ import React from 'react';
 import styles from '../styles/Header.css';
 import { useState } from 'react';
 
-const Header = ({ menuFunction }) => {
-  const [data, setData] = useState('navigation');
+const Header = ({ isSideFunction }) => {
+  const [isSide, setIsSide] = useState('navigation');
 
   const handleClick =()=>{
-    data === 'navigation' ? setData('navigation on') : setData('navigation')
-    menuFunction(data);
+    isSide === 'navigation' ? setIsSide('navigation on') : setIsSide('navigation')
+    isSideFunction(isSide);
   }
 
   return(
