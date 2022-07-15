@@ -7,7 +7,7 @@
   transition: all 0.5s;
 }
 
-.navigation.on{
+.navigation.off{
   width: 60px;
   transition: all 0.5s;
 }
@@ -94,7 +94,7 @@ a{
 }
 
 @media (max-width: 1024px){
-  .navigation.on{
+  .navigation.off{
     display: none;
   }
 
@@ -115,7 +115,7 @@ a{
 }
 
 @media (max-width: 768px){
-  .navigation.on{
+  .navigation.off{
     display: none;
   }
 

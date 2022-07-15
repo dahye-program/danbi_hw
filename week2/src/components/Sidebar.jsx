@@ -22,7 +22,7 @@ const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
   return(
     <section 
       className={
-        sideOn === false ? 'navigation on' : 'navigation'
+        sideOn === false ? 'navigation off' : 'navigation'
       }>
       <ul className='navlist'>
         <li className='title'>
