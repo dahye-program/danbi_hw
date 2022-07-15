@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SIDEBAR from '../data/SIDEBAR_DATA';
 
-const Sidebar = ({value, clickMenuFunction}) => {
+const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
 
@@ -22,7 +22,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
   return(
     <section 
       className={
-        value === 'navigation' ? 'navigation on' : 'navigation'
+        sideOn === false ? 'navigation on' : 'navigation'
       }>
       <ul className='navlist'>
         <li className='title'>
@@ -30,7 +30,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
           <p className='titlecontent'>Brand Name</p>
           <div className='menubaricon'>
           <input type="checkbox" id="hamburger"/>
-          <label htmlFor="hamburger"><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
+          <label htmlFor="hamburger" onClick={handleSideOff}><span><img src="images/hamburger.png" alt='사이드바 아이콘'/></span></label>
           </div>
         </li>
         {SIDEBAR && SIDEBAR.map((e, index)=> {
@@ -42,7 +42,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
             <img src={e.src}/>
            <p 
               className={
-                value === 'navigation' ? 'navicontent none' : 'navicontent'
+                sideOn === false ? 'navicontent none' : 'navicontent'
               }>{e.name}</p>
           </li>
           {e.children && e.children.map((child, index)=>{
@@ -50,7 +50,7 @@ const Sidebar = ({value, clickMenuFunction}) => {
               <Link to={child.to} key={index}>
               <li 
                 className={
-                  value === 'navigation' ? 'navicon none' : 'navicon'} 
+                  sideOn === false ? 'navicon none' : 'navicon'} 
                   onClick={()=>{contentClick(child.name)}}>
                 <p className='navicontent child'>{child.name}</p>
               </li>

@@ -55,6 +55,10 @@ input:focus{
     display: unset;
   }
 
+  .navlist.off {
+    display: none;
+  }
+  
   .main{
     display: flex;
     flex-direction: column;
@@ -64,3 +68,4 @@ input:focus{
     width: 60%;
   }
 }
+

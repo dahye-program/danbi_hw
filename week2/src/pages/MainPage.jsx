@@ -7,25 +7,35 @@ import Footer from '../components/Footer';
 import { useState } from 'react';
 
 const MainPage = () => {
-  const [side, setSide] = useState('');
   const [menuName, setMenuname] = useState('');
+  const [sideOn, setSideOn] = useState(false);
 
-  // Sidebar로 전달하기위한 side value
-  const isSideFunction = (x) => {
-    setSide(x);
-  };
+  // Sidebar 열기
+  const handleSideOn = ()=>{
+    setSideOn(!sideOn);
+    document.querySelector('.navlist').classList.remove('off');
+  }
 
-  // Breadcrumb 메뉴 이름
+  // Sidebar 닫기
+  const handleSideOff =()=>{
+    setSideOn(!sideOn);
+    document.querySelector('.navlist').classList.add('off');
+  }
+
+  // Breadcrumb 메뉴, Content 영역 지정 이름
   const clickMenuFunction = (menuName) => {
     setMenuname(menuName);
   }
   
   return(
   <>
-    <Sidebar value={side} clickMenuFunction={clickMenuFunction}/>
-    <Header isSideFunction={isSideFunction}/>
-    <Breadcrumbs menuName={menuName}/>
-    <Content menuName={menuName}/>
+    <Sidebar 
+      sideOn={sideOn}
+      clickMenuFunction={clickMenuFunction}
+      handleSideOff={handleSideOff}/>
+    <Header handleSideOn={handleSideOn} />
+    <Breadcrumbs menuName={menuName} />
+    <Content menuName={menuName} />
     <Footer />
   </>
   );

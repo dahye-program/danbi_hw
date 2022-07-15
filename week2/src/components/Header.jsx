@@ -2,20 +2,13 @@ import React from 'react';
 import styles from '../styles/Header.css';
 import { useState } from 'react';
 
-const Header = ({ isSideFunction }) => {
-  const [isSide, setIsSide] = useState('navigation');
-
-  const handleClick =()=>{
-    isSide === 'navigation' ? setIsSide('navigation on') : setIsSide('navigation')
-    isSideFunction(isSide);
-  }
-
+const Header = ({handleSideOn}) => {
   return(
     <>
     <div className='topbar'>
       <div className='menubar'>
         <input type='checkbox' id='hamburger'/>
-        <label htmlFor='hamburger' onClick={()=>{handleClick()}}>
+        <label htmlFor='hamburger' onClick={handleSideOn}>
           <span><img src='images/hamburger.png' alt="사이드바 아이콘"/></span>
         </label>
       </div>
