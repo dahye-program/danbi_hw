@@ -118,7 +118,7 @@ button{
 
 .orders_status{
   display: inline-block;
-  color: white;
+  /* color: white; */
   border-radius: 5px;
   text-align: center;
 }
