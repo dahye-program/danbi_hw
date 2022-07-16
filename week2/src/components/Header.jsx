@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from '../styles/Header.css';
-import { useState } from 'react';
 
-const Header = ({handleSideOn}) => {
+const Header = ({onMenuClick}) => {
   return(
     <>
     <div className='topbar'>
       <div className='menubar'>
         <input type='checkbox' id='hamburger'/>
-        <label htmlFor='hamburger' onClick={handleSideOn}>
+        <label htmlFor='hamburger' onClick={onMenuClick}>
           <span><img src='images/hamburger.png' alt="사이드바 아이콘"/></span>
         </label>
       </div>

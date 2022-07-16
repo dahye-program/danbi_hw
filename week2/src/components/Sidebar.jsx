@@ -5,13 +5,9 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SIDEBAR from '../data/SIDEBAR_DATA';
 
-const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
+const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
-
-  const contentClick = (name) => {
-    clickMenuFunction(name);
-  }
 
   useEffect(() => {
     const curPath = window.location.pathname.split('/')[1];
@@ -22,7 +18,7 @@ const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
   return(
     <section 
       className={
-        sideOn === false ? 'navigation off' : 'navigation'
+        onSide=== false ? 'navigation off' : 'navigation'
       }>
       <ul className='navlist'>
         <li className='title'>
@@ -38,20 +34,20 @@ const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
             <Link to={e.to} key={index}>
             <li 
             className={`navicon ${activeIndex === index ? 'active' : ''}`} 
-            onClick={()=>{contentClick(e.name)}}>
+            onClick={()=>{onMenuClick(e.name)}}>
             <img src={e.src}/>
            <p 
               className={
-                sideOn === false ? 'navicontent none' : 'navicontent'
+                onSide === false ? 'navicontent none' : 'navicontent'
               }>{e.name}</p>
           </li>
-          {e.children && e.children.map((child, index)=>{
+          {e.children && e.children.map((child, i)=>{
             return(
-              <Link to={child.to} key={index}>
+              <Link to={child.to} key={i}>
               <li 
                 className={
-                  sideOn === false ? 'navicon none' : 'navicon'} 
-                  onClick={()=>{contentClick(child.name)}}>
+                  onSide === false ? 'navicon none' : 'navicon'} 
+                  onClick={()=>{onMenuClick(child.name)}}>
                 <p className='navicontent child'>{child.name}</p>
               </li>
               </Link>
@@ -64,4 +60,3 @@ const Sidebar = ({ sideOn, clickMenuFunction, handleSideOff}) => {
 }
 
 export default Sidebar;
-

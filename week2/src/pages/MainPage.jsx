@@ -8,32 +8,33 @@ import { useState } from 'react';
 
 const MainPage = () => {
   const [menuName, setMenuname] = useState('');
-  const [sideOn, setSideOn] = useState(false);
+  const [isSide, setIsSide] = useState(false);
 
   // Sidebar 열기
   const handleSideOn = ()=>{
-    setSideOn(!sideOn);
+    setIsSide(!isSide);
     document.querySelector('.navlist').classList.remove('off');
+    console.log(isSide);
   }
 
   // Sidebar 닫기
   const handleSideOff =()=>{
-    setSideOn(!sideOn);
+    setIsSide(!isSide);
     document.querySelector('.navlist').classList.add('off');
   }
 
   // Breadcrumb 메뉴, Content 영역 지정 이름
-  const clickMenuFunction = (menuName) => {
+  const handleMenuClick = (menuName) => {
     setMenuname(menuName);
   }
   
   return(
   <>
     <Sidebar 
-      sideOn={sideOn}
-      clickMenuFunction={clickMenuFunction}
+      onSide={isSide}
+      onMenuClick={handleMenuClick}
       handleSideOff={handleSideOff}/>
-    <Header handleSideOn={handleSideOn} />
+    <Header onMenuClick={handleSideOn} />
     <Breadcrumbs menuName={menuName} />
     <Content menuName={menuName} />
     <Footer />
