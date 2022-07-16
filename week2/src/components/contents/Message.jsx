@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from '../../styles/contents/Message.css';
 
 const Message = () => {
-
+  return(
+    <div>Message 페이지 영역</div>
+  )
 }
 
 export default Message;

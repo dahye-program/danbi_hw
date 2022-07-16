@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
-import styles from '../styles/Sidebar.css';
+import styles from '../../styles/Sidebar.css';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import SIDEBAR from '../data/SIDEBAR_DATA';
+import SIDEBAR from '../../data/SIDEBAR_DATA';
 
 const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
   const [activeIndex, setActiveIndex] = useState(0);

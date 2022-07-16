@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from '../../styles/contents/Password.css';
 
 const Password = () => {
-
+  return(
+    <div>Password 페이지 영역</div>
+  )
 }
 
 export default Password;
