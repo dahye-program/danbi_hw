@@ -1,0 +1,43 @@
+.sidebar_link{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 60px;
+  text-decoration: none;
+}
+
+.sidebar_link:hover{
+  background-color: white;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+img{
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar_label{
+  margin-left: 16px;
+}
+
+.sidebar_label.none{
+  display: none;
+}
+
+.dropdown_link{
+  background-color: dodgerblue;
+  height: 60px;
+  padding-left: 80px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown_link:hover{
+  background-color: white;
+  color: dodgerblue;
+  cursor: pointer;
+}

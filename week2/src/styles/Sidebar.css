@@ -3,7 +3,6 @@
   width: 300px;
   color:white;
   float: left;
-  /* position: sticky; */
   transition: all 0.5s;
 }
 
@@ -12,20 +11,29 @@
   transition: all 0.5s;
 }
 
+.navlist {
+  height: 890px;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0px;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+
 .title{
   padding: 15px;
   padding-bottom: 50px;
   display: flex;
 }
 
-.titlecontent.none{
-  display: none;
-}
-
 img{
   padding-right: 20px;
   width: 25px;
   height: 25px;
+}
+
+.titlecontent.none{
+  display: none;
 }
 
 .menubaricon input[type=checkbox]{
@@ -46,85 +54,33 @@ label > img{
   height: 40px;
 }
 
-.navlist {
-  height: 890px;
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0px;
-  background-color: dodgerblue;
-  cursor: pointer;
-}
-
-.navicon {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.navicon:hover, .navicon.active{
-  background-color: white;
-  color: dodgerblue;
-}
-
-.navicon > img{
-  padding-left: 10px;
-  width: 35px;
-  height: 35px;
-}
-
-.navicon.none{
-  display: none;
-}
-
-.navicontent{
-  display: inline;
-}
-
-.navicontent.none{
-  display: none;
-  transition: all 0.5s;
-}
-
-.navicontent.child{
-  padding-left: 100px;
-}
-
-a{
-  text-decoration: none;
-  color: white;
-}
-
 @media (max-width: 1024px){
-  .navigation.off{
-    display: none;
-  }
-
   .navigation{
     display: unset;
     width: 30%;
     transition: all 0.5s;
   }
 
-  .titlecontent.none{
-    display: unset;
-  }
-
-  .navicontent.none{
-    display: unset;
-    transition: all 0.5s;
-  }
-}
-
-@media (max-width: 768px){
   .navigation.off{
     display: none;
   }
 
+  .titlecontent.none{
+    display: unset;
+  }
+}
+
+@media (max-width: 768px){
   .navigation{
     display: unset;
     width: 100%;
     transition: all 0.5s;
     position: absolute;
     z-index: 999;
+  }
+
+  .navigation.off{
+    display: none;
   }
 
   .menubaricon{
