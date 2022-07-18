@@ -1,5 +1,5 @@
 import React from 'react';
-import Help from '../components/contents/Help';
+import {Help} from '../components/contents/Help';
 
 const HelpPage = () => {
   return <Help />

@@ -9,7 +9,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import CustomersPage from './pages/CustomersPage';
 import MessagePage from './pages/MessagePage';
+import MessageOnePage from './pages/MessageOnePage';
 import HelpPage from './pages/HelpPage';
+import HelpOnePage from './pages/HelpOnePage';
 import SettingsPage from './pages/SettingsPage';
 import PasswordPage from './pages/PasswordPage';
 import SignoutPage from './pages/SignoutPage';
@@ -21,13 +23,11 @@ function App() {
   // Sidebar 열기
   const handleSideOn = ()=>{
     setIsSide(!isSide);
-    document.querySelector('.navlist').classList.remove('off');
   }
 
   // Sidebar 닫기
   const handleSideOff =()=>{
     setIsSide(!isSide);
-    document.querySelector('.navlist').classList.add('off');
   }
 
   // Breadcrumb 메뉴, Content 영역 지정 이름
@@ -48,7 +48,9 @@ function App() {
       <Route path="/dashboard" element={<MainPage/>}/>
       <Route path="/customers" element={<CustomersPage/>}/>
       <Route path="/message" element={<MessagePage/>}/>
+      <Route path="/message1" element={<MessageOnePage/>}/>
       <Route path="/help" element={<HelpPage/>}/>
+      <Route path="/help1" element={<HelpOnePage/>}/>
       <Route path="/settings" element={<SettingsPage/>}/>
       <Route path="/password" element={<PasswordPage/>}/>
       <Route path="/signout" element={<SignoutPage/>}/>  

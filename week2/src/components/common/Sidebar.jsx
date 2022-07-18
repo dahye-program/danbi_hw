@@ -9,7 +9,8 @@ const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
       className={
         onSide=== false ? 'navigation off' : 'navigation'
       }>
-      <div className='navlist'>
+      <div className={
+        onSide === true ? 'navlist' : 'navlist off'}>
         <span className='title'>
           <img src="images/logo.png" alt='로고 아이콘'/>
           <p className='titlecontent'>Brand Name</p>

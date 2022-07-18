@@ -3,19 +3,7 @@ const SidebarData = [
     name: 'Dashboard',
     src: 'images/dashboard.png',
     to: '/dashboard',
-    content: 'dashboard',
-    children: [
-      {
-        name: 'Dashboard1',
-        to: '/dashboard1',
-        content: 'dashboard1'
-      },
-      {
-        name: 'Dashboard2',
-        to: '/dashboard2',
-        content: 'dashboard2'
-      }
-    ]
+    content: 'dashboard'
   },
   {
     name: 'Customers',
@@ -40,7 +28,14 @@ const SidebarData = [
     name: 'Help',
     src: 'images/help.png',
     to: '/help',
-    content: 'help'
+    content: 'help',
+    children: [
+      {
+        name: 'Help1',
+        to: '/Help1',
+        content: 'Help1'
+      }
+    ]
   },
   {
     name: 'Settings',
