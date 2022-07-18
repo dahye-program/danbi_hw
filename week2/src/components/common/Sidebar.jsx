@@ -1,20 +1,9 @@
 import React from 'react';
-import { useEffect } from 'react';
 import styles from '../../styles/Sidebar.css';
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import SideList from './SideList';
+import SideMenu from './SideMenu';
+import SIDEBAR from '../../data/SIDEBAR_DATA';
 
 const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const location = useLocation();
-
-  useEffect(() => {
-    const curPath = window.location.pathname.split('/')[1];
-    // const activeItem = SIDEBAR.findIndex(item => item.content === curPath);
-    // setActiveIndex(curPath.length === 0 ? 0 : activeItem);
-  }, [location]);
-
   return(
     <section 
       className={
@@ -33,7 +22,11 @@ const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
           </label>
           </span>
         </span>
-      <SideList />
+        <nav className='sidebar_list'>
+          {SIDEBAR.map((item, index) => {
+            return <SideMenu item={item} key={index} isSide={onSide} />;
+        })}
+    </nav>
       </div>
     </section>
   );

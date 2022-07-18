@@ -22,7 +22,6 @@ function App() {
   const handleSideOn = ()=>{
     setIsSide(!isSide);
     document.querySelector('.navlist').classList.remove('off');
-    console.log(isSide);
   }
 
   // Sidebar 닫기
