@@ -1,0 +1,33 @@
+.productContainer{
+  width: 100%;
+}
+
+.tabMenu{
+  width: 65%;
+  padding: 30px;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+}
+
+.tab {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid black;
+  height: 30px;
+  font-weight: bold;
+}
+
+.tab.focused{
+  background-color: dodgerblue;
+  color: white;
+  border-bottom: none;
+}
+
+.productWrapper{
+}
+
+.productItem{
+
+}

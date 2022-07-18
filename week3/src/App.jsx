@@ -7,6 +7,7 @@ import Footer from './components/common/Footer';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
+import ProductPage from './pages/ProductPage';
 import CustomersPage from './pages/CustomersPage';
 import MessagePage from './pages/MessagePage';
 import MessageOnePage from './pages/MessageOnePage';
@@ -46,6 +47,7 @@ function App() {
     <Routes>
       <Route path="" element={<MainPage/>}/>
       <Route path="/dashboard" element={<MainPage/>}/>
+      <Route path="/product" element={<ProductPage/>}/>
       <Route path="/customers" element={<CustomersPage/>}/>
       <Route path="/message" element={<MessagePage/>}/>
       <Route path="/message1" element={<MessageOnePage/>}/>

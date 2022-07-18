@@ -6,6 +6,12 @@ const SidebarData = [
     content: 'dashboard'
   },
   {
+    name: 'Product',
+    src: 'images/product.jpeg',
+    to: '/product',
+    content: 'product'
+  },
+  {
     name: 'Customers',
     src: 'images/customers.jpeg',
     to: '/customers',
