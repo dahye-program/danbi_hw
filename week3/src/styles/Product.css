@@ -26,8 +26,42 @@
 }
 
 .productWrapper{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .productItem{
+  width: 25%;
+  height: 400px;
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
 
+.productItem:hover{
+  transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.itemWrap{
+  padding: 30px;
+  text-align: center;
+}
+
+.item_img{
+  width: 200px;
+  height: 250px;
+}
+
+.item_brand{
+  font-size: 1.2rem;
+}
+
+.item_name{
+  font-size: 1rem;
+}
+
+.item_price{
+  color: gray;
 }

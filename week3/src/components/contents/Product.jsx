@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import styles from '../../styles/Product.css';
 import axios from 'axios';
 
-const BRAND_DATA = [{ name: 'alva' }, { name: 'colourpop' }, { name: 'misa' }]
+const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpop' }, { name: 'dior'}]
 
 const Product = () => {
-  const [currentTab, setCurrentTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState('');
   const [brandList, setBrandList] = useState();
 
   const getResultData = async function getBrandList(name){
@@ -14,7 +14,7 @@ const Product = () => {
       setBrandList(response.data);
     }
     catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
@@ -28,14 +28,25 @@ const Product = () => {
       <div className='tabMenu'>
       {BRAND_DATA.map((e, index)=>{
         return(
-          <li key={index} className={`${index === currentTab ? 'tab focused' : 'tab'}`}
+          <li key={index} className={index === currentTab ? 'tab focused' : 'tab'}
             onClick={() => selectBrandHandler(index, e.name)}>
           {e.name}
           </li>)})}
       </div>
       <div className='productWrapper'>
-        <div className='productItem'>        
-        </div>
+      {brandList&&brandList.map((e, index)=>{
+        return(
+            <div key={index} className='productItem'>
+              <div className='itemWrap'>
+              <div className='item_brand'>{e.brand}</div>
+              <img className='item_img' src={e.api_featured_image} alt='화장품 이미지'/>
+              <div className='item_name'>{e.name}</div>
+              <div className='item_category'>{e.category}</div>
+              <div className='item_price'>Price: ${e.price}</div>
+            </div>
+            </div>
+          )
+      })}
       </div>
     </div>
   )
