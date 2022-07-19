@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from '../../styles/Product.css';
+import styles from '../../../styles/contents/product/Product.css';
 import axios from 'axios';
 
 const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpop' }, { name: 'dior'}]
