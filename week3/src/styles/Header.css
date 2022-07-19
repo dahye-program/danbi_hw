@@ -1,7 +1,5 @@
 .topbar{
   width: auto;
-  grid-column: 1;
-  grid-row: 1;
   padding: 15px;
   display: flex;
   justify-content: space-between;
