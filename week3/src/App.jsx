@@ -47,19 +47,19 @@ function App() {
     <Breadcrumbs menuName={menuName} />
     <Routes>
       <Route path="/" element={<MainPage/>}/>
-      <Route path="/dashboard" element={<MainPage/>}/>
+      <Route path="dashboard" element={<MainPage/>}/>
       <Route path="product" >
         <Route index element={<ProductPage />}/>
         <Route path="product_detail" element={<ProductDetailPage />} />
       </Route>
-      <Route path="/customers" element={<CustomersPage/>}/>
-      <Route path="/message" element={<MessagePage/>}/>
+      <Route path="customers" element={<CustomersPage/>}/>
+      <Route path="message" element={<MessagePage/>}/>
       <Route path=":messageId" element={<MessageOnePage/>}/>
-      <Route path="/help" element={<HelpPage/>}/>
+      <Route path="help" element={<HelpPage/>}/>
       <Route path=":helpId" element={<HelpOnePage/>}/>
-      <Route path="/settings" element={<SettingsPage/>}/>
-      <Route path="/password" element={<PasswordPage/>}/>
-      <Route path="/signout" element={<SignoutPage/>}/>  
+      <Route path="settings" element={<SettingsPage/>}/>
+      <Route path="password" element={<PasswordPage/>}/>
+      <Route path="signout" element={<SignoutPage/>}/>  
     </Routes>
     <Footer />
   </BrowserRouter>

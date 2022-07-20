@@ -38,7 +38,7 @@ const SidebarData = [
     children: [
       {
         name: 'Help1',
-        to: '/Help1',
+        to: '/help1',
         content: 'Help1'
       }
     ]
