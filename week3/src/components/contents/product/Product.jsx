@@ -37,15 +37,7 @@ const Product = () => {
       <div className='productWrapper'>
       {brandList&&brandList.map((e, index)=>{
         return(
-          <Link key={index} to={'product_detail'} state={{
-            name: e.name,
-            img: e.api_featured_image,
-            brand: e.brand,
-            price: e.price,
-            // color: e.colors,
-            category: e.category,
-            description: e.description,
-          }}>
+          <Link key={index} to="product_detail" state={e}>
             <div className='productItem'>
               <div className='itemWrap'>
               <div className='item_brand'>{e.brand}</div>
