@@ -48,11 +48,10 @@ function App() {
     <Routes>
       <Route path="/" element={<MainPage/>}/>
       <Route path="/dashboard" element={<MainPage/>}/>
-      <Route path="/product" element={<ProductPage />} />
-        {/* <Route index element={<ProductPage />} /> */}
-        {/* <Route path="product_detail/:detailId" element={<ProductDetailPage />} /> */}
-      {/* </Route> */}
-      <Route path='product/product_detail' element={<ProductDetailPage />} />
+      <Route path="product" >
+        <Route index element={<ProductPage />}/>
+        <Route path="product_detail" element={<ProductDetailPage />} />
+      </Route>
       <Route path="/customers" element={<CustomersPage/>}/>
       <Route path="/message" element={<MessagePage/>}/>
       <Route path=":messageId" element={<MessageOnePage/>}/>
