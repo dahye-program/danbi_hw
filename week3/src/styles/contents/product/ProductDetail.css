@@ -1,0 +1,24 @@
+.detailContainer{
+
+}
+
+.detailWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail_img{
+  width: 150px;
+  height: 200px;
+}
+
+.detail_brand{
+  font-size: 1.4rem;
+}
+
+.detail_price, .detail_color, .detail_description, .detail_tags{
+  font-size: 1.2rem;
+}

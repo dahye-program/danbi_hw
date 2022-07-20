@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import ProductPage from './pages/ProductPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import CustomersPage from './pages/CustomersPage';
 import MessagePage from './pages/MessagePage';
 import MessageOnePage from './pages/MessageOnePage';
@@ -45,14 +46,18 @@ function App() {
     <Header onMenuClick={handleSideOn} />
     <Breadcrumbs menuName={menuName} />
     <Routes>
-      <Route path="" element={<MainPage/>}/>
+      <Route path="/" element={<MainPage/>}/>
       <Route path="/dashboard" element={<MainPage/>}/>
-      <Route path="/product" element={<ProductPage/>}/>
+      <Route path="/product" element={<ProductPage />} />
+        {/* <Route index element={<ProductPage />} /> */}
+        {/* <Route path="product_detail/:detailId" element={<ProductDetailPage />} /> */}
+      {/* </Route> */}
+      <Route path='product/product_detail' element={<ProductDetailPage />} />
       <Route path="/customers" element={<CustomersPage/>}/>
       <Route path="/message" element={<MessagePage/>}/>
-      <Route path="/message1" element={<MessageOnePage/>}/>
+      <Route path=":messageId" element={<MessageOnePage/>}/>
       <Route path="/help" element={<HelpPage/>}/>
-      <Route path="/help1" element={<HelpOnePage/>}/>
+      <Route path=":helpId" element={<HelpOnePage/>}/>
       <Route path="/settings" element={<SettingsPage/>}/>
       <Route path="/password" element={<PasswordPage/>}/>
       <Route path="/signout" element={<SignoutPage/>}/>  

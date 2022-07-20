@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from '../../../styles/contents/product/Product.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpop' }, { name: 'dior'}]
 
@@ -36,7 +37,16 @@ const Product = () => {
       <div className='productWrapper'>
       {brandList&&brandList.map((e, index)=>{
         return(
-            <div key={index} className='productItem'>
+          <Link key={index} to={'product_detail'} state={{
+            name: e.name,
+            img: e.api_featured_image,
+            brand: e.brand,
+            price: e.price,
+            // color: e.colors,
+            category: e.category,
+            description: e.description,
+          }}>
+            <div className='productItem'>
               <div className='itemWrap'>
               <div className='item_brand'>{e.brand}</div>
               <img className='item_img' src={e.api_featured_image} alt='화장품 이미지'/>
@@ -45,8 +55,8 @@ const Product = () => {
               <div className='item_price'>Price: ${e.price}</div>
             </div>
             </div>
-          )
-      })}
+            </Link>
+          )})}
       </div>
     </div>
   )

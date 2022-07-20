@@ -30,8 +30,13 @@
   flex-wrap: wrap;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 .productItem{
-  width: 25%;
+  width: 330px;
   height: 400px;
   margin-bottom: 30px;
   position: relative;
@@ -41,7 +46,6 @@
 .productItem:hover{
   transition: all 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
 
 .itemWrap{
