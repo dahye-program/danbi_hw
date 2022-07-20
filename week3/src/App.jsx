@@ -21,6 +21,7 @@ import SignoutPage from './pages/SignoutPage';
 function App() {
   const [menuName, setMenuname] = useState('');
   const [isSide, setIsSide] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   // Sidebar 열기
   const handleSideOn = ()=>{
@@ -32,7 +33,12 @@ function App() {
     setIsSide(!isSide);
   }
 
-  // Breadcrumb 메뉴, Content 영역 지정 이름
+  // input 값 가져오기
+  const onInputClick = (input) => {
+    setSearchValue(input);
+  }
+
+  // Breadcrumb
   const handleMenuClick = (menuName) => {
     setMenuname(menuName);
   }
@@ -43,7 +49,7 @@ function App() {
       onSide={isSide}
       onMenuClick={handleMenuClick}
       handleSideOff={handleSideOff}/>
-    <Header onMenuClick={handleSideOn} />
+    <Header onMenuClick={handleSideOn} handleInputClick={onInputClick} />
     <Breadcrumbs menuName={menuName} />
     <Routes>
       <Route path="/" element={<MainPage/>}/>
