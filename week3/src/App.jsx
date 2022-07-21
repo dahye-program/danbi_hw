@@ -4,10 +4,11 @@ import Sidebar from './components/common/Sidebar';
 import Header from './components/common/Header';
 import Breadcrumbs from './components/common/Breadcrumbs';
 import Footer from './components/common/Footer';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
-import ProductPage from './pages/ProductPage';
+import Product from './components/contents/product/Product';
+// import ProductPage from './pages/ProductPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CustomersPage from './pages/CustomersPage';
 import MessagePage from './pages/MessagePage';
@@ -21,7 +22,7 @@ import SignoutPage from './pages/SignoutPage';
 function App() {
   const [menuName, setMenuname] = useState('');
   const [isSide, setIsSide] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
+  const searchRef = useRef();
 
   // Sidebar 열기
   const handleSideOn = ()=>{
@@ -33,9 +34,9 @@ function App() {
     setIsSide(!isSide);
   }
 
-  // input 값 가져오기
+  // input 값 검색
   const onInputClick = (input) => {
-    setSearchValue(input);
+    searchRef.current.search(input);
   }
 
   // Breadcrumb
@@ -55,7 +56,7 @@ function App() {
       <Route path="/" element={<MainPage/>}/>
       <Route path="dashboard" element={<MainPage/>}/>
       <Route path="product" >
-        <Route index element={<ProductPage />}/>
+        <Route index element={<Product ref={searchRef}/>}/>
         <Route path="product_detail" element={<ProductDetailPage />} />
       </Route>
       <Route path="customers" element={<CustomersPage/>}/>

@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from '../../styles/Header.css';
 
 const Header = ({onMenuClick, handleInputClick}) => {
-
   const handleKeyPress = (e) => {
     if(e.key==='Enter') {
       if(e.target.value!==''){
