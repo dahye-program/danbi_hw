@@ -75,10 +75,6 @@ a{
 
 
 @media (max-width: 768px){
-  .productWrapper{
-    flex-direction: column;
-  }
-
   .itemWrap{
     padding-left: 5%;
   }

@@ -1,5 +1,5 @@
 .detailContainer{
-
+  min-height: 600px;
 }
 
 .detailWrapper{
@@ -29,7 +29,6 @@
     min-height: 600px;
     padding: 20px;
   }
-
 }
 
 @media (max-width: 768px){
