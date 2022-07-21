@@ -69,3 +69,18 @@ a{
 .item_price{
   color: gray;
 }
+
+@media (max-width: 1024px){
+}
+
+
+@media (max-width: 768px){
+  .productWrapper{
+    flex-direction: column;
+  }
+
+  .itemWrap{
+    padding-left: 5%;
+  }
+}
+

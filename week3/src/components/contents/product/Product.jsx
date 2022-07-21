@@ -35,7 +35,8 @@ const Product = forwardRef((props, ref) => {
         const response = (brandList.filter((e) => {
           return e.name.toLowerCase().includes(input.toLowerCase());
         }))
-        setSearchList(response)
+        console.log(response)
+        response.length === 0 ? alert('검색된 결과가 없습니다.') : setSearchList(response)
       }
     }),
   )

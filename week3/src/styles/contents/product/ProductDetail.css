@@ -22,3 +22,18 @@
 .detail_price, .detail_color, .detail_description, .detail_tags{
   font-size: 1.2rem;
 }
+
+@media (max-width: 1024px){
+  .detailContainer{
+    width: auto;
+    min-height: 600px;
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 768px){
+  .detailContainer{
+    min-height: 600px;
+  }
+}
