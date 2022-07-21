@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import styles from '../../../styles/contents/product/Product.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpop' }, { name: 'dior'}]
 
-const Product = () => {
-  const [currentTab, setCurrentTab] = useState('');
+const Product = ({searchData}) => {
+  const [currentTab, setCurrentTab] = useState(0);
   const [brandList, setBrandList] = useState();
 
   const getResultData = async function getBrandList(name){
@@ -23,6 +24,10 @@ const Product = () => {
     setCurrentTab(index);
     getResultData(name);
   };
+
+  useEffect(()=> {
+    getResultData(BRAND_DATA[0].name);
+  },[])
 
   return(
     <div className='productContainer'>
