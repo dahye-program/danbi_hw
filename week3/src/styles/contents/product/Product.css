@@ -78,6 +78,9 @@ a{
 
 
 @media (max-width: 768px){
+  .productWrapper{
+    justify-content: center;
+  }
   .itemWrap{
     padding-left: 5%;
   }
