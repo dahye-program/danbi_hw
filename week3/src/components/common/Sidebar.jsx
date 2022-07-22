@@ -3,20 +3,20 @@ import styles from '../../styles/Sidebar.css';
 import SideMenu from './SideMenu';
 import SIDEBAR from '../../data/SIDEBAR_DATA';
 
-const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
+const Sidebar = ({ onSide, onMenuClick, handleSide}) => {
   return(
     <section 
       className={
-        onSide=== false ? 'navigation off' : 'navigation'
+        `navigation ${onSide ? '' : 'off'}` 
       }>
       <div className={
-        onSide === true ? 'navlist' : 'navlist off'}>
+        `navlist ${onSide ? '' : 'off'}`}>
         <span className='title'>
           <img src="images/logo.png" alt='로고 아이콘'/>
           <p className='titlecontent'>Brand Name</p>
           <span className='menubaricon'>
           <input type="checkbox" id="hamburger"/>
-          <label htmlFor="hamburger" onClick={handleSideOff}>
+          <label htmlFor="hamburger" onClick={handleSide}>
             <span>
               <img src="images/hamburger.png" alt='사이드바 아이콘'/>
             </span>
@@ -25,7 +25,7 @@ const Sidebar = ({ onSide, onMenuClick, handleSideOff}) => {
         </span>
         <nav className='sidebar_list'>
           {SIDEBAR.map((item, index) => {
-            return <SideMenu item={item} key={index} isSide={onSide} />;
+            return <SideMenu item={item} key={index} onSide={onSide} />;
         })}
     </nav>
       </div>

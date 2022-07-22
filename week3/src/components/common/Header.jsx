@@ -10,6 +10,10 @@ const Header = ({onMenuClick, handleInputClick}) => {
       }
     }}
 
+  // const handleChange = (e) =>{
+  //   onChange(e)
+  // }
+
   return(
     <>
     <div className='topbar'>

@@ -71,6 +71,9 @@ a{
 }
 
 @media (max-width: 1024px){
+  .tabMenu{
+    width: auto;
+  }
 }
 
 

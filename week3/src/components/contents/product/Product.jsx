@@ -8,9 +8,8 @@ const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpo
 const Product = forwardRef((props, ref) => {
   const [currentTab, setCurrentTab] = useState(0);
   const [brandList, setBrandList] = useState();
-  const [searchList, setSearchList] = useState('');
 
-  const getResultData = async function getBrandList(name){
+  const onBrandList = async function handleBrandList(name){
     try {
       const response = await axios.get(`${'https://makeup-api.herokuapp.com/api/v1/products.json?brand='}${name}`);
       setBrandList(response.data);
@@ -22,21 +21,20 @@ const Product = forwardRef((props, ref) => {
 
   const selectBrandHandler = (index, name) => {
     setCurrentTab(index);
-    getResultData(name);
+    onBrandList(name);
   };
 
   useEffect(()=> {
-    getResultData(BRAND_DATA[0].name);
+    onBrandList(BRAND_DATA[0].name);
   },[])
 
   useImperativeHandle(
     ref, ()=>({
-      search(input){
+      handleSearch(input){
         const response = (brandList.filter((e) => {
           return e.name.toLowerCase().includes(input.toLowerCase());
         }))
-        console.log(response)
-        response.length === 0 ? alert('검색된 결과가 없습니다.') : setSearchList(response)
+        response.length === 0 ? alert('검색 결과 없습니다'): setBrandList(response)
       }
     }),
   )
@@ -52,7 +50,7 @@ const Product = forwardRef((props, ref) => {
           </li>)})}
       </div>
       <div className='productWrapper'>
-      {searchList === '' ? brandList&&brandList.map((e, index)=>{
+      {brandList&&brandList.map((e, index)=>{
         return(
           <Link key={index} to="product_detail" state={e}>
             <div className='productItem'>
@@ -64,20 +62,7 @@ const Product = forwardRef((props, ref) => {
               <div className='item_price'>Price: ${e.price}</div>
             </div>
             </div>
-            </Link>
-          )}) : searchList && searchList.map((e, index)=>{
-            return(
-              <Link key={index} to="product_detail" state={e}>
-                <div className='productItem'>
-                  <div className='itemWrap'>
-                  <div className='item_brand'>{e.brand}</div>
-                  <img className='item_img' src={e.api_featured_image} alt='화장품 이미지'/>
-                  <div className='item_name'>{e.name}</div>
-                  <div className='item_category'>{e.category}</div>
-                  <div className='item_price'>Price: ${e.price}</div>
-                </div>
-                </div>
-                </Link>
+          </Link>
           )})}
       </div>
     </div>
