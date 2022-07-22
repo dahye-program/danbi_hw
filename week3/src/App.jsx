@@ -21,19 +21,19 @@ function App() {
   const [isSide, setIsSide] = useState(false);
   const searchRef = useRef();
 
-  // Sidebar 열기
+  // Sidebar
   const handleSidebar = ()=>{
     setIsSide(!isSide);
+  }
+
+  // input 값 검색
+  const onInputClick = (input) => {
+    searchRef.current.handleSearch(input);
   }
 
   // Breadcrumb
   const handleMenuClick = (menuName) => {
     setMenuname(menuName);
-  }
-
-   // input 값 검색
-   const onInputClick = (input) => {
-    searchRef.current.handleSearch(input);
   }
   
   return(
@@ -42,9 +42,10 @@ function App() {
       onSide={isSide}
       onMenuClick={handleMenuClick}
       handleSide={handleSidebar}/>
-    <Header onMenuClick={handleSidebar} 
-            handleInputClick={onInputClick} 
-          // onChange={handleInputChange} 
+    <Header 
+      onMenuClick={handleSidebar} 
+      handleInputClick={onInputClick} 
+      // onChange={handleInputChange} 
     />
     <Breadcrumbs menuName={menuName} />
     <Routes>
@@ -55,10 +56,14 @@ function App() {
         <Route path="product_detail" element={<ProductDetail />} />
       </Route>
       <Route path="customers" element={<Customers/>}/>
-      <Route path="message" element={<Message/>}/>
-      {/* <Route path=":messageId" element={<MessageOnePage/>}/> */}
-      <Route path="help" element={<Help/>}/>
-      {/* <Route path=":helpId" element={<HelpOnePage/>}/> */}
+      <Route path="message">
+        <Route index element={<Message />} />
+        <Route path=":id" element={<MessageOne/>}/>
+      </Route>
+      <Route path="help">
+        <Route index element={<Help />}/>
+        <Route path=":id" element={<HelpOne/>} />
+      </Route>
       <Route path="settings" element={<Settings/>}/>
       <Route path="password" element={<Password/>}/>
       <Route path="signout" element={<Signout/>}/>  
