@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from '../../styles/Header.css';
 
-const Header = ({onMenuClick, handleInputClick}) => {
-  const handleKeyPress = (e) => {
-    if(e.key==='Enter') {
-      if(e.target.value!==''){
-        handleInputClick(e.target.value);
-        e.target.value='';
-      }
-    }}
+const Header = ({onMenuClick, handleInputClick, onChange}) => {
+  // const handleKeyPress = (e) => {
+  //   if(e.key==='Enter') {
+  //     if(e.target.value!==''){
+  //       handleInputClick(e.target.value);
+  //       e.target.value='';
+  //     }
+  //   }}
 
-  // const handleChange = (e) =>{
-  //   onChange(e)
-  // }
+  const handleChange = (e) =>{
+    onChange(e.target.value)
+  }
 
   return(
     <>
@@ -24,7 +24,8 @@ const Header = ({onMenuClick, handleInputClick}) => {
         </label>
       </div>
       <input placeholder='Search here'  
-        onKeyPress={handleKeyPress}
+        // onKeyPress={handleKeyPress}
+        onChange={handleChange}
       />
       <div className='profile'>
         <img src='images/profile.png' alt="프로필 아이콘"/>

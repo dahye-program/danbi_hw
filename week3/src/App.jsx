@@ -6,7 +6,7 @@ import Breadcrumbs from './components/common/Breadcrumbs';
 import Footer from './components/common/Footer';
 import { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from './pages/MainPage';
+import Dashboard from './components/contents/Dashboard';
 import Product from './components/contents/product/Product';
 import ProductDetail from './components/contents/product/ProductDetail';
 import Customers from './components/contents/Customers';
@@ -26,7 +26,7 @@ function App() {
     setIsSide(!isSide);
   }
 
-  // input 값 검색
+  // Search
   const onInputClick = (input) => {
     searchRef.current.handleSearch(input);
   }
@@ -45,12 +45,12 @@ function App() {
     <Header 
       onMenuClick={handleSidebar} 
       handleInputClick={onInputClick} 
-      // onChange={handleInputChange} 
+      onChange={onInputClick} 
     />
     <Breadcrumbs menuName={menuName} />
     <Routes>
-      <Route path="/" element={<MainPage/>}/>
-      <Route path="dashboard" element={<MainPage/>}/>
+      <Route path="/" element={<Dashboard/>}/>
+      <Route path="dashboard" element={<Dashboard/>}/>
       <Route path="product" >
         <Route index element={<Product ref={searchRef}/>}/>
         <Route path="product_detail" element={<ProductDetail />} />

@@ -8,11 +8,13 @@ const BRAND_DATA = [{ name: 'anna sui' }, { name: 'benefit' }, { name: 'colourpo
 const Product = forwardRef((props, ref) => {
   const [currentTab, setCurrentTab] = useState(0);
   const [brandList, setBrandList] = useState();
+  const [searchList, setSearchList] = useState(brandList);
 
   const onBrandList = async function handleBrandList(name){
     try {
       const response = await axios.get(`${'https://makeup-api.herokuapp.com/api/v1/products.json?brand='}${name}`);
       setBrandList(response.data);
+      setSearchList(response.data);
     }
     catch (error) {
       console.error(error);
@@ -31,11 +33,14 @@ const Product = forwardRef((props, ref) => {
   useImperativeHandle(
     ref, ()=>({
       handleSearch(input){
-        const response = (brandList.filter((e) => {
-          return e.name.toLowerCase().includes(input.toLowerCase());
-        }))
-        response.length === 0 ? alert('검색 결과 없습니다'): setBrandList(response)
-      }
+          const response = (brandList.filter((e) => {
+            if(input==='') return searchList;
+            else{
+              return e.name.toLowerCase().includes(input.toLowerCase());
+            }
+          }))
+          input === '' ? setBrandList(searchList) : setBrandList(response)
+        }
     }),
   )
   
