@@ -25,7 +25,7 @@ const Sidebar = ({ onSide, onMenuClick, handleSide}) => {
         </span>
         <nav className='sidebar_list'>
           {SIDEBAR.map((item, index) => {
-            return <SideMenu item={item} key={index} onSide={onSide} />;
+            return <SideMenu item={item} key={index} onSide={onSide} onMenu={onMenuClick}/>;
         })}
     </nav>
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from '../../styles/SideMenu.css';
 
-const SideMenu = ({ item, onSide }) => {
+const SideMenu = ({ item, onSide, onMenu }) => {
   const [subnav, setSubnav] = useState(false);
   const [activeMenu, setActiveMenu] = useState('');
   const location = useLocation();
@@ -14,6 +14,7 @@ const SideMenu = ({ item, onSide }) => {
   useEffect(() => {
     const curPath = window.location.pathname.split('/')[1];
     setActiveMenu(curPath);
+    onMenu(curPath);
   }, [location]);
 
   return (
