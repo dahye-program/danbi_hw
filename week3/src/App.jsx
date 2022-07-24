@@ -45,7 +45,6 @@ function App() {
       handleSide={handleSidebar}/>
     <Header 
       onMenuClick={handleSidebar} 
-      handleInputClick={onInputClick} 
       onChange={onInputClick} 
     />
     <Breadcrumbs Name={menuName} />
