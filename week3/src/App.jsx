@@ -15,6 +15,7 @@ import { Help, HelpOne } from './components/contents/Help';
 import Settings from './components/contents/Settings';
 import Password from './components/contents/Password';
 import Signout from './components/contents/Signout';
+import NotFound from './components/common/NotFound';
 
 function App() {
   const [menuName, setMenuname] = useState('');
@@ -47,7 +48,7 @@ function App() {
       handleInputClick={onInputClick} 
       onChange={onInputClick} 
     />
-    <Breadcrumbs menuName={menuName} />
+    <Breadcrumbs Name={menuName} />
     <Routes>
       <Route path="/" element={<Dashboard/>}/>
       <Route path="dashboard" element={<Dashboard/>}/>
@@ -56,17 +57,14 @@ function App() {
         <Route path="product_detail" element={<ProductDetail />} />
       </Route>
       <Route path="customers" element={<Customers/>}/>
-      <Route path="message">
-        <Route index element={<Message />} />
-        <Route path=":id" element={<MessageOne/>}/>
-      </Route>
-      <Route path="help">
-        <Route index element={<Help />}/>
-        <Route path=":id" element={<HelpOne/>} />
-      </Route>
+      <Route path="message" element={<Message />} />
+      <Route path="message1" element={<MessageOne/>}/>
+      <Route path="help" element={<Help />}/>
+      <Route path="help1" element={<HelpOne/>} />
       <Route path="settings" element={<Settings/>}/>
       <Route path="password" element={<Password/>}/>
-      <Route path="signout" element={<Signout/>}/>  
+      <Route path="signout" element={<Signout/>}/> 
+      <Route path="/*" element={<NotFound />}/> 
     </Routes>
     <Footer />
   </BrowserRouter>
