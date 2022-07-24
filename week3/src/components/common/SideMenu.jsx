@@ -28,9 +28,6 @@ const SideMenu = ({ item, onSide, onMenu }) => {
               {item.name}
           </span>
         </div>
-        <div>
-          {item.children && subnav ? item.iconOpened : item.children? item.iconClosed : null}
-        </div>
       </Link>
       {subnav &&
         item.children.map((item, index) => {
