@@ -32,8 +32,8 @@ const SideMenu = ({ item, onSide, onMenu }) => {
       {subnav &&
         item.children.map((item, index) => {
           return (
-            <Link 
-              className={activeMenu === item.content ? 'dropdown_link active' : 'dropdown_link'} to={item.to} key={index}>
+            <Link className={`dropdown_link ${activeMenu === item.content ? 'active' : ''}`}
+              to={item.to} key={index}>
               <span className={`sidebar_label ${onSide ? '' : 'none'}`}>
                 {item.name}</span>
             </Link>
