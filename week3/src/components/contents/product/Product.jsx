@@ -49,7 +49,8 @@ const Product = forwardRef((props, ref) => {
       <div className='tabMenu'>
       {BRAND_DATA.map((e, index)=>{
         return(
-          <li key={index} className={index === currentTab ? 'tab focused' : 'tab'}
+          <li key={index} className={
+            `tab ${index === currentTab ? 'focused' : ''}`}
             onClick={() => selectBrandHandler(index, e.name)}>
           {e.name}
           </li>)})}

@@ -13,7 +13,6 @@ const ProductDetail = () => {
       <img className='detail_img' alt='화장품 사진' src={state.api_featured_image}/>
       <div className='detail_brand'>brand : <b>{state.brand}</b></div>
       <div className='detail_price'>price : <b>${state.price}</b></div>
-      {/* <p className='detail_color'>color : <b>{productColor}</b></p> */}
       <p className='detail_description'>Description : <b>{state.description}</b></p>
     </div>
    </div>

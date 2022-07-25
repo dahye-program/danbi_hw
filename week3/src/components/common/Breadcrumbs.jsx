@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Breadcrumbs.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import BREADCRUMB from '../../data/BREADCRUMB';
 
 const Breadcrumbs = ({Name}) => {
